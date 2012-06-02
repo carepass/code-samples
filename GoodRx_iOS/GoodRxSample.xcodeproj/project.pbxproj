@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F224638F157825DB009323FE /* GoodRxRequestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F224638E157825DB009323FE /* GoodRxRequestDelegate.m */; };
+		F2246392157856CF009323FE /* CarePassClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2246391157856CF009323FE /* CarePassClientManager.m */; };
+		F224639515785826009323FE /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F224639415785826009323FE /* Constants.m */; };
+		F224641B1579452A009323FE /* libCarePassFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F224641A1579452A009323FE /* libCarePassFramework.a */; };
+		F26094731577E84C0006F100 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26094721577E84C0006F100 /* UIKit.framework */; };
+		F26094751577E84C0006F100 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26094741577E84C0006F100 /* Foundation.framework */; };
+		F26094771577E84C0006F100 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26094761577E84C0006F100 /* CoreGraphics.framework */; };
+		F260947D1577E84C0006F100 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F260947B1577E84C0006F100 /* InfoPlist.strings */; };
+		F260947F1577E84C0006F100 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F260947E1577E84C0006F100 /* main.m */; };
+		F26094831577E84C0006F100 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F26094821577E84C0006F100 /* AppDelegate.m */; };
+		F26094861577E84C0006F100 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26094841577E84C0006F100 /* MainStoryboard.storyboard */; };
+		F26094891577E84C0006F100 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F26094881577E84C0006F100 /* ViewController.m */; };
+		F26094911577E84C0006F100 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26094901577E84C0006F100 /* SenTestingKit.framework */; };
+		F26094921577E84C0006F100 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26094721577E84C0006F100 /* UIKit.framework */; };
+		F26094931577E84C0006F100 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26094741577E84C0006F100 /* Foundation.framework */; };
+		F260949B1577E84C0006F100 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F26094991577E84C0006F100 /* InfoPlist.strings */; };
+		F260949E1577E84C0006F100 /* GoodRxSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F260949D1577E84C0006F100 /* GoodRxSampleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F26094941577E84C0006F100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F26094651577E84C0006F100 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F260946D1577E84C0006F100;
+			remoteInfo = GoodRxSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F224638D157825DB009323FE /* GoodRxRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodRxRequestDelegate.h; sourceTree = "<group>"; };
+		F224638E157825DB009323FE /* GoodRxRequestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodRxRequestDelegate.m; sourceTree = "<group>"; };
+		F2246390157856CF009323FE /* CarePassClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarePassClientManager.h; sourceTree = "<group>"; };
+		F2246391157856CF009323FE /* CarePassClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarePassClientManager.m; sourceTree = "<group>"; };
+		F224639315785826009323FE /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		F224639415785826009323FE /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		F224641A1579452A009323FE /* libCarePassFramework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCarePassFramework.a; sourceTree = "<group>"; };
+		F260946E1577E84C0006F100 /* GoodRxSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodRxSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F26094721577E84C0006F100 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F26094741577E84C0006F100 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F26094761577E84C0006F100 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F260947A1577E84C0006F100 /* GoodRxSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoodRxSample-Info.plist"; sourceTree = "<group>"; };
+		F260947C1577E84C0006F100 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F260947E1577E84C0006F100 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F26094801577E84C0006F100 /* GoodRxSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GoodRxSample-Prefix.pch"; sourceTree = "<group>"; };
+		F26094811577E84C0006F100 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F26094821577E84C0006F100 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F26094851577E84C0006F100 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F26094871577E84C0006F100 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F26094881577E84C0006F100 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F260948F1577E84C0006F100 /* GoodRxSampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodRxSampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F26094901577E84C0006F100 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F26094981577E84C0006F100 /* GoodRxSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoodRxSampleTests-Info.plist"; sourceTree = "<group>"; };
+		F260949A1577E84C0006F100 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F260949C1577E84C0006F100 /* GoodRxSampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodRxSampleTests.h; sourceTree = "<group>"; };
+		F260949D1577E84C0006F100 /* GoodRxSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodRxSampleTests.m; sourceTree = "<group>"; };
+		F2DE41BF1579626600D72A48 /* CarePass */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CarePass; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F260946B1577E84C0006F100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F26094731577E84C0006F100 /* UIKit.framework in Frameworks */,
+				F26094751577E84C0006F100 /* Foundation.framework in Frameworks */,
+				F26094771577E84C0006F100 /* CoreGraphics.framework in Frameworks */,
+				F224641B1579452A009323FE /* libCarePassFramework.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F260948B1577E84C0006F100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F26094911577E84C0006F100 /* SenTestingKit.framework in Frameworks */,
+				F26094921577E84C0006F100 /* UIKit.framework in Frameworks */,
+				F26094931577E84C0006F100 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F26094631577E84C0006F100 = {
+			isa = PBXGroup;
+			children = (
+				F26094781577E84C0006F100 /* GoodRxSample */,
+				F26094961577E84C0006F100 /* GoodRxSampleTests */,
+				F26094711577E84C0006F100 /* Frameworks */,
+				F260946F1577E84C0006F100 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F260946F1577E84C0006F100 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F260946E1577E84C0006F100 /* GoodRxSample.app */,
+				F260948F1577E84C0006F100 /* GoodRxSampleTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F26094711577E84C0006F100 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F224641A1579452A009323FE /* libCarePassFramework.a */,
+				F26094721577E84C0006F100 /* UIKit.framework */,
+				F26094741577E84C0006F100 /* Foundation.framework */,
+				F26094761577E84C0006F100 /* CoreGraphics.framework */,
+				F26094901577E84C0006F100 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F26094781577E84C0006F100 /* GoodRxSample */ = {
+			isa = PBXGroup;
+			children = (
+				F26094811577E84C0006F100 /* AppDelegate.h */,
+				F26094821577E84C0006F100 /* AppDelegate.m */,
+				F26094841577E84C0006F100 /* MainStoryboard.storyboard */,
+				F26094871577E84C0006F100 /* ViewController.h */,
+				F26094881577E84C0006F100 /* ViewController.m */,
+				F26094791577E84C0006F100 /* Supporting Files */,
+				F224638D157825DB009323FE /* GoodRxRequestDelegate.h */,
+				F224638E157825DB009323FE /* GoodRxRequestDelegate.m */,
+				F2246390157856CF009323FE /* CarePassClientManager.h */,
+				F2246391157856CF009323FE /* CarePassClientManager.m */,
+				F224639315785826009323FE /* Constants.h */,
+				F224639415785826009323FE /* Constants.m */,
+			);
+			path = GoodRxSample;
+			sourceTree = "<group>";
+		};
+		F26094791577E84C0006F100 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F2DE41BF1579626600D72A48 /* CarePass */,
+				F260947A1577E84C0006F100 /* GoodRxSample-Info.plist */,
+				F260947B1577E84C0006F100 /* InfoPlist.strings */,
+				F260947E1577E84C0006F100 /* main.m */,
+				F26094801577E84C0006F100 /* GoodRxSample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F26094961577E84C0006F100 /* GoodRxSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				F260949C1577E84C0006F100 /* GoodRxSampleTests.h */,
+				F260949D1577E84C0006F100 /* GoodRxSampleTests.m */,
+				F26094971577E84C0006F100 /* Supporting Files */,
+			);
+			path = GoodRxSampleTests;
+			sourceTree = "<group>";
+		};
+		F26094971577E84C0006F100 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F26094981577E84C0006F100 /* GoodRxSampleTests-Info.plist */,
+				F26094991577E84C0006F100 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F260946D1577E84C0006F100 /* GoodRxSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F26094A11577E84D0006F100 /* Build configuration list for PBXNativeTarget "GoodRxSample" */;
+			buildPhases = (
+				F260946A1577E84C0006F100 /* Sources */,
+				F260946B1577E84C0006F100 /* Frameworks */,
+				F260946C1577E84C0006F100 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoodRxSample;
+			productName = GoodRxSample;
+			productReference = F260946E1577E84C0006F100 /* GoodRxSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F260948E1577E84C0006F100 /* GoodRxSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F26094A41577E84D0006F100 /* Build configuration list for PBXNativeTarget "GoodRxSampleTests" */;
+			buildPhases = (
+				F260948A1577E84C0006F100 /* Sources */,
+				F260948B1577E84C0006F100 /* Frameworks */,
+				F260948C1577E84C0006F100 /* Resources */,
+				F260948D1577E84C0006F100 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F26094951577E84C0006F100 /* PBXTargetDependency */,
+			);
+			name = GoodRxSampleTests;
+			productName = GoodRxSampleTests;
+			productReference = F260948F1577E84C0006F100 /* GoodRxSampleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F26094651577E84C0006F100 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = F26094681577E84C0006F100 /* Build configuration list for PBXProject "GoodRxSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F26094631577E84C0006F100;
+			productRefGroup = F260946F1577E84C0006F100 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F260946D1577E84C0006F100 /* GoodRxSample */,
+				F260948E1577E84C0006F100 /* GoodRxSampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F260946C1577E84C0006F100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F260947D1577E84C0006F100 /* InfoPlist.strings in Resources */,
+				F26094861577E84C0006F100 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F260948C1577E84C0006F100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F260949B1577E84C0006F100 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F260948D1577E84C0006F100 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F260946A1577E84C0006F100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F260947F1577E84C0006F100 /* main.m in Sources */,
+				F26094831577E84C0006F100 /* AppDelegate.m in Sources */,
+				F26094891577E84C0006F100 /* ViewController.m in Sources */,
+				F224638F157825DB009323FE /* GoodRxRequestDelegate.m in Sources */,
+				F2246392157856CF009323FE /* CarePassClientManager.m in Sources */,
+				F224639515785826009323FE /* Constants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F260948A1577E84C0006F100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F260949E1577E84C0006F100 /* GoodRxSampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F26094951577E84C0006F100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F260946D1577E84C0006F100 /* GoodRxSample */;
+			targetProxy = F26094941577E84C0006F100 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F260947B1577E84C0006F100 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F260947C1577E84C0006F100 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F26094841577E84C0006F100 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F26094851577E84C0006F100 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		F26094991577E84C0006F100 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F260949A1577E84C0006F100 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F260949F1577E84C0006F100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F26094A01577E84D0006F100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F26094A21577E84D0006F100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoodRxSample/GoodRxSample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/CarePass\"/**";
+				INFOPLIST_FILE = "GoodRxSample/GoodRxSample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F26094A31577E84D0006F100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoodRxSample/GoodRxSample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/CarePass\"/**";
+				INFOPLIST_FILE = "GoodRxSample/GoodRxSample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F26094A51577E84D0006F100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GoodRxSample.app/GoodRxSample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoodRxSample/GoodRxSample-Prefix.pch";
+				INFOPLIST_FILE = "GoodRxSampleTests/GoodRxSampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F26094A61577E84D0006F100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GoodRxSample.app/GoodRxSample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoodRxSample/GoodRxSample-Prefix.pch";
+				INFOPLIST_FILE = "GoodRxSampleTests/GoodRxSampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F26094681577E84C0006F100 /* Build configuration list for PBXProject "GoodRxSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F260949F1577E84C0006F100 /* Debug */,
+				F26094A01577E84D0006F100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F26094A11577E84D0006F100 /* Build configuration list for PBXNativeTarget "GoodRxSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F26094A21577E84D0006F100 /* Debug */,
+				F26094A31577E84D0006F100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F26094A41577E84D0006F100 /* Build configuration list for PBXNativeTarget "GoodRxSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F26094A51577E84D0006F100 /* Debug */,
+				F26094A61577E84D0006F100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F26094651577E84C0006F100 /* Project object */;
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+	<head> 
+		<title>Data API Application Demo</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="includes/jquery.mobile-1.1.0.css" />
+		<link rel="stylesheet" href="includes/style.css" />
+		<script src="includes/jquery-1.7.2.min.js"></script>
+		<script src="includes/jquery.mobile-1.1.0.js"></script>
+		<script src="includes/underscore.js"></script>
+
+		<script src="js/config.js"></script>
+		<script src="js/templates.js"></script>
+		<script src="js/demo.js"></script>
+
+	</head> 
+	<body> 
+	
+	<!-- Search page -->
+	<div data-role="page" id="search-page">
+	
+		<div data-role="header" data-theme="b">
+			<h1>Search Drug by name</h1>
+		</div>
+	
+		<div data-role="content" data-theme="d">	
+			<div id="resultLog"></div>
+			<div data-role="fieldcontain">
+				<label class="searchlabel" for="search-basic">Input drug name to search:</label>
+				<input type="search" name="nameToSearch" id="nameToSearch" value=""/>	
+			</div>	
+			<input id="ajaxSeachByDrugName" type="button" value="Search" data-theme="b"/>		
+		</div>
+		
+		<nav id="searchResults"> 
+			<ul id="resultContent" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="e"> 
+				<li data-role="list-divider">Results:</li>
+			</ul>
+		</nav>
+	</div>
+	
+	<!-- Basic Information Page -->
+	<div data-role="page" id="basicInformation-page">
+		<div data-role="header" data-theme="b">
+			<a href="#search-page" data-role="button" data-theme="a" data-icon="arrow-l" data-iconpos="notext">Back</a>
+			<h1>Drug Information</h1>
+		</div>	
+		<div data-role="content" data-theme="d">
+			<div id="resultLog"></div>
+			<div data-role="fieldcontain">
+				<label for="nda" >NDA:</label>
+				<input type="text" name="nda" id="nda" value=""/>	
+			</div>	
+			<div data-role="fieldcontain">
+				<label for="labelerName" >Labeler Name:</label>
+				<input type="text" name="labelerName" id="labelerName" value=""/>	
+			</div>
+			<div data-role="fieldcontain">
+				<label for="proprietaryName" >Proprietary Name:</label>
+				<input type="text" name="proprietaryName" id="proprietaryName" value=""/>	
+			</div>	
+			<div data-role="fieldcontain">
+				<label for="nonProprietaryName" >Non Proprietary Name:</label>
+				<input type="text" name="nonProprietaryName" id="nonProprietaryName" value=""/>	
+			</div>
+			<div data-role="fieldcontain">
+				<label for="strength" >Strength:</label>
+				<input type="text" name="strength" id="strength" value=""/>	
+			</div>	
+			<div data-role="fieldcontain">
+				<label for="unit" >Unit:</label>
+				<input type="text" name="unit" id="unit" value=""/>	
+			</div>	
+			<div data-role="fieldcontain">
+				<label for="substanceName" >Substance Name:</label>
+				<input type="text" name="substanceName" id="substanceName" value=""/>	
+			</div>	
+			<div data-role="fieldcontain">
+				<label for="dosageFormname" >Dosage Formname:</label>
+				<input type="text" name="dosageFormname" id="dosageFormname" value=""/>	
+			</div>												
+			<div data-role="fieldcontain">
+				<label for="routeName" >Route Name:</label>
+				<input type="text" name="routeName" id="routeName" value=""/>	
+			</div>	
+			<div data-role="fieldcontain">
+				<label for="startMarketing_date" >Start Marketing Date:</label>
+				<input type="text" name="startMarketing_date" id="startMarketing_date" value=""/>	
+			</div>	
+			<div data-role="fieldcontain">
+				<label for="endMarketing_date" >End Marketing Date:</label>
+				<input type="text" name="endMarketing_date" id="endMarketing_date" value=""/>	
+			</div>	
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><a href="#packages-page" id="btnPackages" data-role="button" data-theme="b">Packages</a></div>
+				<div class="ui-block-b"><a href="#" id="btnAlternatives" data-role="button" data-theme="b">Therapeutic Equivalences</a></div>	   
+				<div class="ui-block-b"><a href="#" id="btnRecalls" data-role="button" data-theme="b">Recalls</a></div>
+				<div class="ui-block-b"><a href="#" id="btnTrials" data-role="button" data-theme="b">Clinical Trials</a></div>
+				<div class="ui-block-b"><a href="#" id="btnCompare" data-role="button" data-theme="b">Compare prices</a></div>
+			</fieldset>											
+		</div>
+	</div>
+	
+	
+	<!-- Packages Page -->
+	<div data-role="page" id="packages-page">
+		<div data-role="header" data-theme="b">
+			<a href="#basicInformation-page" data-role="button" data-theme="a" data-icon="arrow-l" data-iconpos="notext">Back</a>
+			<h1>Packages Information</h1>
+		</div>
+		
+		<div data-role="content" data-theme="d">
+ 			<ul id="packageList" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="e"> 
+				<li data-role="list-divider">Packages:</li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<!-- Alternatives Page -->
+	<div data-role="page" id="alternatives-page">
+		<div data-role="header" data-theme="b">
+			<a href="#basicInformation-page" data-role="button" data-theme="a" data-icon="arrow-l" data-iconpos="notext">Back</a>
+			<h1>Therapeutic Alternatives</h1>
+		</div>
+		
+		<div id="alternativesContent" data-role="content" data-theme="d">
+		</div>
+	</div>
+	
+	<!-- Recalls Page -->
+	<div data-role="page" id="recalls-page">	
+		<div data-role="header" data-theme="b">
+			<a href="#basicInformation-page" data-role="button" data-theme="a" data-icon="arrow-l" data-iconpos="notext">Back</a>
+			<h1>Recall Information</h1>
+		</div>
+		
+		<div id="recallContent" data-role="content" data-theme="d">		
+			<ul id="recallResultContent" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="e"> 
+				<li data-role="list-divider">Results for <span id="brandName"></span></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- Clinical Trials Page -->
+	<div data-role="page" id="trials-page">	
+		<div data-role="header" data-theme="b">
+			<a href="#basicInformation-page" data-role="button" data-theme="a" data-icon="arrow-l" data-iconpos="notext">Back</a>
+			<h1>Clinical Trial Information</h1>
+		</div>
+		
+		<div id="trialsContent" data-role="content" data-theme="d">		
+			<ul id="trialsResultContent" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="e"> 
+				<li data-role="list-divider">Results for <span id="recbrandName"></span></li>
+			</ul>
+		</div>
+	</div>
+		
+	<!-- Data Not Found Page -->
+	<div data-role="dialog" id="dataNotFound-page">
+		<div data-role="header" >
+			<h1>Info</h1>
+		</div>
+		<div data-role="content" >
+			<h2>Data not found.</h2>
+			<p>Try to search another drug</p>
+		</div>
+	</div>	
+		
+			
+	<!-- Compare Drug prices Page -->
+	<div data-role="page" id="comparePrices-page">
+		<div data-role="header" data-theme="b">
+			<a href="#basicInformation-page" data-role="button" data-theme="a" data-icon="arrow-l" data-iconpos="notext">Back</a>
+			<h1>Compare Drug Prices</h1>
+		</div>
+		
+		<div data-role="content" data-theme="d" id = "compareDrugName">	
+			<div data-role="fieldcontain">
+				<label for="name" title = "Name of drug" >Name of Drug*:</label>
+				<input type="text" name="name" id="name" value="" title = "Name of drug"/>	
+			</div>			
+		</div>
+		
+		<div data-role="collapsible" data-theme="d" id = "compareAdditional">
+			<h3>Additional Search Options</h3>
+			<div data-role="fieldcontain">
+				<label for="drugForm" title = "Form is the physical form in which a drug is produced and dispensed, such as a tablet, a capsule, or an injectable" >Form:</label>
+				<select name="form" id="drugForm" title = "Form is the physical form in which a drug is produced and dispensed, such as a tablet, a capsule, or an injectable" >
+				    <option value = "">any</option>
+				    <option value = "tablet">tablet</option>
+				    <option value = "capsule">capsule</option>
+				    <option value = "injectable">injectable</option>
+				</select>
+			</div>
+			<div data-role="fieldcontain">
+				<label for="dosage" title = "String representing the dosage measurement of the prescription medication" >Dosage:</label>
+				<input type="text" name="dosage" id="dosage" value="" title = "String representing the dosage measurement of the prescription medication"/>	
+			</div>	
+			<div data-role="fieldcontain">
+				<label for="quantity" title = "Float representing the quantity used to derive price">Quantity:</label>
+				<input type="text" name="quantity" id="quantity" value="" title = "Float representing the quantity used to derive price"/>	
+			</div>
+			<div data-role="fieldcontain">
+				<label for="manufacturer" title = "String referencing the manufacturer type of drug, either brand or generic">Strength:</label>
+				<input type="text" name="manufacturer" id="manufacturer" value="" title = "String referencing the manufacturer type of drug, either brand or generic"/>	
+			</div>											
+		</div>
+		<input id="btnComparePrices" type="button" value="Search" data-theme="b"/>
+		<nav id="searchResults"> 	
+			<ul id="lowestResultContent" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="e"> 
+				<li data-role="list-divider">Lowest Price:</li>
+			</ul>
+			<ul id="compareResultContent" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="e"> 
+				<li data-role="list-divider">Results:</li>
+			</ul>		
+		</nav>
+	</div>
+	</body>
+</html>

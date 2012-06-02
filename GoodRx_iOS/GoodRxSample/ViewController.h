@@ -1,0 +1,51 @@
+/*
+ * Copyright 2012 Aetna, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0.html
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+#import <UIKit/UIKit.h>
+#import "RetailRx/Model/RRXSearchRequest.h"
+#import "RetailRx/Model/RRXSearchResponse.h"
+#import "RetailRx/Model/RRXSearchResult.h"
+#import "CarePassClientManager.h"
+#import "CarePassServiceRequest.h"
+#import "CarePassServiceResponse.h"
+
+@interface ViewController : UIViewController <UITextFieldDelegate, CarePassServiceRequestDelegate> {
+
+@public
+    CarePassServiceResponse *response;
+    NSException           *exception;
+    NSError               *error;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *lblPrice;
+@property (weak, nonatomic) IBOutlet UITextField *txtDrugName;
+@property (weak, nonatomic) IBOutlet UIWebView *wvResults;
+
+@property (copy, nonatomic) NSString *drugName;
+@property (nonatomic, readonly) CarePassServiceResponse *response;
+@property (nonatomic, readonly) NSError               *error;
+@property (nonatomic, readonly) NSException           *exception;
+
+-(bool)isFinishedOrFailed;
+-(void)request:(CarePassServiceRequest *)request didReceiveResponse:(NSURLResponse *)response;
+-(void)request:(CarePassServiceRequest *)request didCompleteWithResponse:(CarePassServiceResponse *)response;
+-(void)request:(CarePassServiceRequest *)request didReceiveData:(NSData *)data;
+-(void)request:(CarePassServiceRequest *)request didSendData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
+-(void)request:(CarePassServiceRequest *)request didFailWithError:(NSError *)error;
+-(void)request:(CarePassServiceRequest *)request didFailWithServiceException:(NSException *)exception;
+
+- (IBAction)doSearch:(id)sender;
+
+@end
