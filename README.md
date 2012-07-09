@@ -25,3 +25,7 @@ To run this app:
 1. Open file GoodRxSample/Constants.h and supply your Retail Rx API key
 
 2. Give it a run!
+
+/OauthHandshake_iOS
+-------------------
+A simple iOS application that allows a user to supply their client id and secret key and generate an access token for use with the CarePass Sync APIs. It is an implementation of Google's Oauth2 client library: http://code.google.com/p/gtm-oauth2/
