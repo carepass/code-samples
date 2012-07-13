@@ -9,7 +9,7 @@
         var setting =
           {
                 'host':     "www.carepass.com/carepass/oauth"
-              , 'clientId': "43ytcawcksn7f9y9nyd39xfk"
+              , 'clientId': "<YOUR_CLIENT_ID>"
               , 'scope': "IDENTITY,LIFESTYLE,FITNESS,FAMILY,INSURANCE,APPOINTMENT"
               , 'redirectUrl': "http://localhost:8092/MyCPSyncApp/auth"
           };

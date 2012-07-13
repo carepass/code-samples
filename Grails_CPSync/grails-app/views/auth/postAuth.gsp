@@ -353,8 +353,8 @@
         var setting =
           {
             'host':     "www.carepass.com/carepass/oauth"
-          , 'clientId': "43ytcawcksn7f9y9nyd39xfk"
-          , 'client_secret' : 'j6gFM9fymPk8m8AAAXGmgu4y'
+          , 'clientId': "<YOUR_CLIENT_ID>"
+          , 'client_secret' : '<YOUR_CLIENT_SECRET>'
           };
 
         var authHost     = "https://"     + setting.host;
