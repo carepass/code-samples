@@ -17,9 +17,8 @@
 
 @interface CarePassCredentials : NSObject {
     NSString *apiKey;
-    NSString *accessKey;
-    NSString *secretKey;
-    NSString *securityToken;
+    NSString *clientId;
+    NSString *accessToken;
 }
 /** Inits the credential with the access key and the secret key.
  *
@@ -27,32 +26,20 @@
  */
 -(id)initWithAPIKey:(NSString *)theAPIKey;
 
-/** Inits the credential with the access key and the secret key.
+/** Inits the credential with the api key, the access key and the secret key.
  *
- * @param accessKey The CP Access Key
- * @param secretKey The CP Secret Key
+ * @param apiKey The CP API Access Key
+ * @param accessToken The CP Sync Access Token
  */
--(id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey;
-
-/** Inits the credential with the access key and the secret key.
- *
- * @param theAccessKey The CP Access Key
- * @param theSecretKey The CP Secret Key
- * @param theSecurityToken The CP Security Token
- */
--(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey withSecurityToken:(NSString *)theSecurityToken;
-
+-(id)initWithAPIKey:(NSString *)theAPIKey withClientId:(NSString *)theClientId withAccessToken:(NSString *)theAccessToken;
 
 /** The CP API Access Key */
 @property (nonatomic, retain) NSString *apiKey;
 
-/** The CP Access Key */
-@property (nonatomic, retain) NSString *accessKey;
+/** The CP Client Id */
+@property (nonatomic, retain) NSString *clientId;
 
-/** The CP Secret Key */
-@property (nonatomic, retain) NSString *secretKey;
-
-/** The CP Security Token, used inconjunction with Session Based Credentials. */
-@property (nonatomic, retain) NSString *securityToken;
+/** The CP Access Token */
+@property (nonatomic, retain) NSString *accessToken;
 
 @end

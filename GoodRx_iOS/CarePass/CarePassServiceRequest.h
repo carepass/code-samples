@@ -17,6 +17,7 @@
 #import "CarePassSDKUtil.h"
 #import "CarePassURLRequest.h"
 #import "CarePassCredentials.h"
+#import "CarePassClientException.h"
 
 @protocol CarePassServiceRequestDelegate;
 @class CarePassServiceResponse;
@@ -25,13 +26,14 @@
 @interface CarePassServiceRequest : NSObject {
     CarePassURLRequest                 *urlRequest;
     NSMutableDictionary              *parameters;
+    NSMutableDictionary              *headers;
     id<CarePassServiceRequestDelegate> delegate;
     NSString                         *httpMethod;
     NSString                         *endpoint;
-    NSString                         *serviceName;
     NSString                         *regionName;
     NSString                         *hostName;
     NSString                         *userAgent;
+    NSString                         *jsonString;
     CarePassCredentials              *credentials;
     NSURLConnection                  *urlConnection;
     
@@ -59,10 +61,11 @@
 @property (nonatomic, readonly) NSURL             *url;
 
 @property (nonatomic, retain) NSMutableDictionary *parameters;
+@property (nonatomic, retain) NSMutableDictionary *headers;
 @property (nonatomic, retain) NSString            *endpoint;
-@property (nonatomic, retain) NSString            *serviceName;
 @property (nonatomic, retain) NSString            *hostName;
 @property (nonatomic, retain) NSString            *userAgent;
+@property (nonatomic, retain) NSString            *jsonString;
 
 /**
  * Open property that enables user to distinquish various requests.
@@ -73,8 +76,11 @@
 
 -(NSString *)queryString;
 -(void)sign;
+-(void)assignHeaders;
 
 -(void)setParameterValue:(NSString *)theValue forKey:(NSString *)theKey;
+
+-(void)setHeaderValue:(NSString *)theValue forKey:(NSString *)theKey;
 
 /** Returns the delegate object for the request */
 -(id<CarePassServiceRequestDelegate> )delegate;
