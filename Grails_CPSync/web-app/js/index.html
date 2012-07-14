@@ -1,0 +1,260 @@
+<html>
+<head>
+  <script type="text/javascript" src = "vendor/jquery-1.6.4.js"></script>  
+  <script type="text/javascript" src = "api.js"></script>
+  <script type="text/javascript" src = "cpsync.js"></script>
+  <script type="text/javascript" src = "vendor/underscore.js"></script>
+   <script type="text/javascript" src = "vendor/jsOAuth-1.3.4.js"></script>
+  
+  <script type="text/javascript">
+    var oauth, options;
+
+    options = {
+        enablePrivilege: true,
+  //      consumerKey: 'vktndkd4pf69ejj6xafhebnm',
+    //    consumerSecret: 'utzcmn7HQJmFpEY8pupepXxz',
+     //   accessTokenKey: '43ytcawcksn7f9y9nyd39xfk',
+     //   accessTokenSecret: 'j6gFM9fymPk8m8AAAXGmgu4y',
+      //  appendQueryString: true
+        consumerKey: 'z5t3whgq2u4na5un3tcveujz',
+        consumerSecret: 'm3dull@n',
+        
+       /* authorizationUrl: "https://www.carepass.com/carepass/oauth/authorize",
+        accessTokenUrl: "https://www.carepass.com/carepass/oauth/token",
+        requestTokenUrl:  "https://www.carepass.com/carepass/oauth/token" */
+
+
+        authorizationUrl: "https://qaapi.aetna.com/carepass/oauth/authorize",
+       // accessTokenUrl: "https://www.carepass.com/carepass/oauth/token",
+        requestTokenUrl:  "https://qaapi.aetna.com/carepass/oauth/token"
+     };
+
+    function openAuthoriseWindow(url)
+    {
+        var wnd = window.open(url, 'authorise');
+        setTimeout(waitForPin, 100);
+
+        function waitForPin()
+        {
+            if (wnd.closed)
+            {
+ /*               var pin = prompt("Please enter your PIN", "");
+                oauth.setVerifier(pin);*/
+                oauth.fetchAccessToken(getSomeData, failureHandler);
+            }
+            else
+            {
+                setTimeout(waitForPin, 100);
+            }
+        }
+    }
+  
+
+    function getSomeData()
+    {
+        oauth.get('https://qaapi.aetna.com/user-directory-api/insurance/plans',
+
+            function(data) {
+                entries = JSON.parse(data.text);
+                var html = [];
+                for (var i = 0; i < entries.length; i++) {
+                    html.push(JSON.stringify(entries[i]));
+                };
+                $('#timeline').html(html.join('<hr>'));
+            },
+
+            function(data) { alert('lame'); console.dir(data); }
+        );
+    }   
+    
+    function failureHandler(data)
+    {
+        console.error(data);
+    }
+	  
+	function connectToCarePass(){
+		
+	    oauth = OAuth(options);
+	    oauth.fetchRequestToken(openAuthoriseWindow, function(data){console.log(data);});
+	    
+	//    oauth.get('https://qaapi.aetna.com/carepass', function(data){
+//		oauth.post('https://qaapi.carepass.com/carepass/oauth/authorize', null, function(data){  	
+      //      var requestParams = data.text;
+        //    console.log('requestParams: (request) ' + requestParams);
+            /*var authUrl = 'https://api.linkedin.com/uas/oauth/authorize?oauth_token='+returnParamValue('oauth_token', requestParams);
+            console.log('authUrl: ' + authUrl);
+            cb.showWebPage(authUrl); // This opens the LinkedIn authorization / sign in page     
+            cb.onLocationChange = function(loc){ success(loc); }; // When the ChildBrowser URL 	    	
+	    	*/
+	    //},
+	    
+	    
+		/*  oauth.get('https://qaapi.aetna.com/carepass/oauth/token', function (data) {
+		        //alert(data);
+		        var requestParams = data.text;
+		        console.log("Log: requestParams: " + data.text);
+		        var myWindow = window.open('', '','width=200,height=100');
+		        myWindow.document.write(data.text);	  
+		        myWindow.focus();
+		    });  	*/	  
+	 }
+  </script> 
+  
+  <script type="text/javascript">
+	  var htsObj = new HTSObject();
+	  var theUserApi = 'zv66hqmgj575sd678yv2589x58';
+	  var clinicalTrialsObject = new htsObj.clinicalTrialsApi('sfdklklsdfk');
+	  var drugsObject = new htsObj.drugsAPI('ksadfkskdkaskd');
+	  var deIdentClaims = new htsObj.deIdentifiedClaimsAPI('lksadlfljsf');
+	  var goodRxObject = new htsObj.goodRxAPI('skfskkfkk3232223');
+	  var medicalCostOfMethods = new htsObj.MedCostOfCareAPI('ii234234i23-000jnn');
+	  var cpObj = new CPSyncObject();
+	  
+	  function  saveLifeStyle(){
+		  
+		  var theNewApi = new cpObj.lifeStyleApi('Bearer 8014e5711b461848748fe001d7d3553992dedecf7da27da681cdd155ec0a6209');
+		  var theBioApi = new cpObj.biographyApi('Bearer 8014e5711b461848748fe001d7d3553992dedecf7da27da681cdd155ec0a6209');
+		  var theActivitiesApi = new cpObj.activitiesApi('Bearer 8014e5711b461848748fe001d7d3553992dedecf7da27da681cdd155ec0a6209');
+		  var theInsuranceApi = new cpObj.insuranceApi('Bearer 8014e5711b461848748fe001d7d3553992dedecf7da27da681cdd155ec0a6209');
+    	  var options = {};
+    	  options.onSuccess = clearAndAppendFromPageFunction;
+    	  options.onFailure = showAlert;
+    	  
+		  var lo = {};
+		  var customers = new Object ({id: 1, firstName:'Delton'});
+
+		  theNewApi.getLifestyleData("blah", options);
+		  theBioApi.getUserIdentity(options);
+		  theBioApi.getUserBiography(options);
+		  theInsuranceApi.getPlans(options);
+		  theInsuranceApi.getInsurancePlansLookup(options);
+		  theInsuranceApi.getInsuranceCarriers(options);
+		  var theDataObject = JSON.parse('[{"id": 59455, "desc":"Human transportation with legs where both legs are in the air at the same time",					"text":"Running",					"type":"Running",					"typeExtra":"running 1",					"date":"05/05/2012 00:00:00",					"startTime":"12/14/2011 09:11:00",					"endTime":"12/14/2011 11:11:00",					"startCity":"Milford",					"endCity":"Shelton",					"startState":"Connecticut",					"endState":"Connecticut",					"startCountry":"USA",					"endCountry":"USA",					"startLatitudeLongitide":"42:12",					"endLatitudeLongitide":" 41:11",					"caloriesBurned":122,	"distance":1650,					"duration":600,					"lastUpdated":"12/14/2011 00:00:00"				},{"id": 59457,			"desc":"Human transportation with legs where both legs are in the air at the same time",				"text":"Running",				"type":"Running",				"typeExtra":"some sport",				"date":"05/05/2012 00:00:00",				"startTime":"12/14/2011 09:11:00",				"endTime":"12/14/2011 11:11:00",				"startCity":"Milford",				"endCity":"Shelton",				"startState":"Connecticut",				"endState":"Connecticut",				"startCountry":"USA",				"endCountry":"USA",				"startLatitudeLongitide":"42:12",				"endLatitudeLongitide":" 41:11",				"caloriesBurned":122,				"distance":1100,				"duration":75 ,				"lastUpdated":"12/14/2011 00:00:00"			}			]');
+
+		  var theString = '[{"id": 59455, "desc":"Human transportation with legs where both legs are in the air at the same time",					"text":"Running",					"type":"Running",					"typeExtra":"running 1",					"date":"05/05/2012 00:00:00",					"startTime":"12/14/2011 09:11:00",					"endTime":"12/14/2011 11:11:00",					"startCity":"Milford",					"endCity":"Shelton",					"startState":"Connecticut",					"endState":"Connecticut",					"startCountry":"USA",					"endCountry":"USA",					"startLatitudeLongitide":"42:12",					"endLatitudeLongitide":" 41:11",					"caloriesBurned":122,	"distance":1650,					"duration":600,					"lastUpdated":"12/14/2011 00:00:00"				},{"id": 59457,			"desc":"Human transportation with legs where both legs are in the air at the same time",				"text":"Running",				"type":"Running",				"typeExtra":"some sport",				"date":"05/05/2012 00:00:00",				"startTime":"12/14/2011 09:11:00",				"endTime":"12/14/2011 11:11:00",				"startCity":"Milford",				"endCity":"Shelton",				"startState":"Connecticut",				"endState":"Connecticut",				"startCountry":"USA",				"endCountry":"USA",				"startLatitudeLongitide":"42:12",				"endLatitudeLongitide":" 41:11",				"caloriesBurned":122,				"distance":1100,				"duration":75 ,				"lastUpdated":"12/14/2011 00:00:00"			}			]';
+		  theActivitiesApi.getActivityTypes(options);
+		  theActivitiesApi.createActivityData(theDataObject, options);
+		  theActivitiesApi.updateActivityData(theDataObject, options);
+		 // theActivitiesApi.createActivityData(theString, options);
+		 
+		 // theNewApi.saveLifestyleData(lo, options);
+		  
+	  }
+	  
+      function getClinicalTrials(){
+    	  var options = {};
+    	  options.onSuccess = clearAndAppendFromPageFunction
+    	  options.onFailure = showAlert
+    	  clinicalTrialsObject.search({'state3':'NY'}, options)
+      }
+      function getTrialById(){
+    	  var options = {};
+    	  options.onSuccess = clearAndAppendResultsfunction
+    	  options.onFailure = showAlert
+    	  clinicalTrialsObject.getTrialsByNCTId('NCT00835224', options);
+      }
+      
+      function searchForArt(){
+    	  var options = {};
+    	  options.onSuccess = clearAndAppendResultsfunction;
+    	  options.onFailure = showAlert;
+    	  
+       	  drugsObject.searchForART('Alabama Fertility Specialists', 'Birmingham', 'Alabama', 'Steinkampf', '', false , options);
+    	  drugsObject.getDrugsByName('Cymbalta',options);
+    	  drugsObject.getDrugsByNDCPackages("0002-4760", "0002-4760-76", options);
+    	  var searchParams = {};
+    	  searchParams['product'] = 'Tylenol';
+    	  searchParams['date'] = '2012-02-17';
+    	  searchParams['pastdays'] = '10';
+    	  
+    	  drugsObject.fdaRecallSearch(searchParams,options);
+    	  clinicalTrialsObject.getTrialsByNCTId('NCT00835224', options);
+    	  deIdentClaims.search('0004-0098','F',1980,'2010Q1','2011Q3',1, options);
+    	  
+    	  goodRxObject.lowPrice("Lipitor", options);
+    	  goodRxObject.compare("Lipitor", options);
+    	  
+    	  medicalCostOfMethods.CostOfCareLatLngByCPT('99205', '38.898717', '-77.035974');
+    	  medicalCostOfMethods.CostOfCareByZip('99205', '90210');
+
+       	  medicalCostOfMethods.getCategories();
+    	  var dentals = medicalCostOfMethods.getCategories('Dental');    	  
+     	  
+      }
+      
+     function showAll(){
+    	 
+   	  var options = {};
+	  options.onSuccess = clearAndAppendResultsfunction;
+	  options.onFailure = showAlert;
+	  
+
+	  
+     }
+      
+      
+      var clearAndAppendResultsfunction = function(data, textStatus){ 
+		   var trialsHolder = $('#clinicalTrialsHolder'); 
+		   //var trialobject = data[0]
+		   //trialsHolder.append('<p>result = ' + textStatus + '<p>Official Title: ' + trialobject.officialTitle + '</p>')
+		   trialsHolder.html('');
+		   trialsHolder.append('<p>result = ' + textStatus + '<p>');
+		   _.each(data, function(trialobject) { 
+			   trialsHolder.append('<p>Official Title: ' + trialobject.officialTitle + 
+
+'</p>')		       
+		   });
+      }
+      
+      var clearAndAppendFromPageFunction = function(data, textStatus){ 
+		   var trialsHolder = $('#clinicalTrialsHolder'); 
+		   var trials = data['clinicalTrials']
+		   trialsHolder.html('');
+		   trialsHolder.append('<p>result = ' + textStatus + '<p>');
+		   _.each(trials, function(trialobject) { 
+			   trialsHolder.append('<p>Title: ' + trialobject.title + '</p>')		
+
+       
+		   });
+      }
+      var showAlert = function(msg){
+    	  document.write(msg.responseText);
+      }
+  </script>
+</head>
+<body>
+<input type="button" value = "Get trial For NCT00835224" onclick="getTrialById();"/>
+<div>
+ <h3>Search for clinical trials</h3>
+ <label for = "drugname" >drug name:</label><input id = "drugname" type="text" placeholder = 
+
+"Drisdol">
+ <label for = "status" >status:</label><input id = "status" type="text" placeholder = "open">
+ <label for = "page" >page:</label><input id = "page" type="text" placeholder = "1">
+ <label for = "condition" >condition:</label><input id = "condition" type="text" placeholder = 
+
+"Depression">
+ <label for = "state1" >state1:</label><input id = "state1" type="text" placeholder = "NY">
+ <label for = "state2" >state2:</label><input id = "state2" type="text" placeholder = "AK">
+ <label for = "state3" >state2:</label><input id = "state3" type="text" placeholder = "GA">
+ <label for = "country1" >country1:</label><input id = "country1" type="text" placeholder = 
+
+"NA:US">
+ <label for = "country2" >country2:</label><input id = "country2" type="text" placeholder = 
+
+"SS:AF">
+ <label for = "country3" >country2:</label><input id = "country3" type="text" placeholder = 
+
+"EU:AL">
+ 
+<input type="button" value = "Search clinic trials" onclick="getClinicalTrials();"/>
+<input type="button" value = "Search for Art" onclick="searchForArt();"/>
+<input type="button" value = "CP API Run all" onclick="saveLifeStyle();"/>
+<input type="button" value = "Connect to CarePass" onclick="connectToCarePass();"/>
+
+</div>
+<div id = clinicalTrialsHolder>
+  
+</div>  
+</body>
+</html>
