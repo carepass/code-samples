@@ -44,12 +44,8 @@
 		<property name="apiKey" value="sbnrcvts8k3ceh9yqk6wyenx" />
 		<property name="apiSecret" value="9pDwrx2d5PGE2w8MXrQfTaFh" />
 		<property name="callback"
-			value="http://localhost:8080/consumer-platform-carepass-java-connector-web/login-oauth-completed.htm" />
-
-		<!-- value="http://localhost:8080/consumer-platform-carepass-java-connector-web/login-oauth-completed" 
-		value="http://xlab310:8080/consumer-platform-carepass-java-connector-web/login-oauth-completed" 
-			/> -->
-
+			value="http://localhost:8080/CPSync_Java/login-oauth-completed.htm" />
+	
 		<property name="api" ref="carePassApi" />
 	</bean>
 	<bean id="carePassOAuth"

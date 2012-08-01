@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.aetna.carepass</groupId>
-	<artifactId>consumer-platform-carepass-java-connector-web</artifactId>
+	<artifactId>CPSync_Java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>consumer-platform-carepass-java-connector-web</name>
+	<name>CPSync_Java</name>
 	<url>http://maven.apache.org</url>
 
 
