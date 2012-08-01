@@ -35,3 +35,9 @@ A simple iOS application that allows a user to supply their client id and secret
 /Grails_CPSync_Demo_Application
 -------------------
 A simple Grails application that demonstrates how to do the Oauth2 based Carepass login and the utilization of the cpsync.js to retrieve or update data about the logged in user.
+Tested using STS 2.7.2
+
+
+/CPSync_Java
+------------
+A simple Java application that demonstrates how to do the Oauth2 based Carepass login and the utilization of the Carepass Sync Java Library works to retrieve or update data about the logged in user.
