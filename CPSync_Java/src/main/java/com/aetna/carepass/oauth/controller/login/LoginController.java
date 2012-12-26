@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.aetna.carepass.oauth.connector.service.CarePassOAuth;
 import com.aetna.carepass.oauth.connector.service.EndpointException;
+import com.aetna.carepass.oauth.controller.UrlConstants;
 
 @Controller
 public class LoginController {
@@ -23,6 +25,11 @@ public class LoginController {
 		return "redirect:" + carePassOAuth.retrieveInitialRequest();
 
 	}
+	
+	@RequestMapping(value ="/CPSync-main.htm")
+	public ModelAndView goBack(){
+		return new ModelAndView(UrlConstants.END_POINT_MAIN_PAGE);
+	}
 
 	@RequestMapping(value = { "/login-oauth-completed.htm" }, method = RequestMethod.GET)
 	public String carePassLoginSuccess(
@@ -30,7 +37,7 @@ public class LoginController {
 			WebRequest request, Model model) {
 		try{
 		carePassOAuth.grantOauthAccess(oauthVerifier);		
-		return "endpoint";
+		return UrlConstants.END_POINT_MAIN_PAGE;
 		}catch(EndpointException e){
 			model.addAttribute("error",e.getMessage());
 			return "login";

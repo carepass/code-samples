@@ -4,9 +4,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
-        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/consumer-platform-carepass-java-connector/consumer-platform-carepass-java-connector">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="java-output-path" value="/consumer-platform-carepass-java-connector-web/target/classes"/>
         <property name="context-root" value="CPSync_Java"/>
     </wb-module>

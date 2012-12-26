@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/util     
+        http://www.springframework.org/schema/util/spring-util-3.0.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+<!-- 	<bean id="identityService" -->
+<!-- 		class="com.aetna.carepass.oauth.connector.service.endpoints.IdentityServiceImpl"/> -->
+	<!-- Biography -->
+<!-- 	<bean id="biographyService" -->
+<!-- 		class="com.aetna.carepass.oauth.connector.service.endpoints.BiographyServiceImpl"/> -->
+	<!-- Fitness -->
+<!-- 	<bean id="fitnessService" -->
+<!-- 		class="com.aetna.carepass.oauth.connector.service.endpoints.FitnessServiceImpl" /> -->
+	<!-- Insurance -->
+<!-- 	<bean id="insuranceService" -->
+<!-- 		class="com.aetna.carepass.oauth.connector.service.endpoints.InsuranceServiceImpl" /> -->
+	<!-- Lifestyle -->
+<!-- 	<bean id="lifestyleService" -->
+<!-- 		class="com.aetna.carepass.oauth.connector.service.endpoints.LifestyleServiceImpl" /> -->
+	<!-- Appointment -->
+<!-- 	<bean id="appointmentService" -->
+<!-- 		class="com.aetna.carepass.oauth.connector.service.endpoints.AppointmentServiceImpl" /> -->
+</beans>

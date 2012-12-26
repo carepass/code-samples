@@ -13,6 +13,7 @@ import com.aetna.carepass.oauth.connector.api.lifestyle.Lifestyle;
 import com.aetna.carepass.oauth.connector.api.lifestyle.LifestyleAttribute;
 import com.aetna.carepass.oauth.connector.service.EndpointException;
 import com.aetna.carepass.oauth.connector.service.endpoints.LifestyleService;
+import com.aetna.carepass.oauth.controller.UrlConstants;
 import com.google.gson.Gson;
 
 @Controller
@@ -24,6 +25,7 @@ public class LifestyleController {
 	public ModelAndView redirectToLifestyle() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("lifestyle");
+		mav.addObject("goBackUrl",UrlConstants.END_POINT_MAIN_URI);
 		return mav;
 	}
 
@@ -31,6 +33,7 @@ public class LifestyleController {
 	public ModelAndView redirectToLifestylePut() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("lifestyleput");
+		mav.addObject("goBackUrl",UrlConstants.END_POINT_LIFESTYLE_URI);
 		return mav;
 	}
 
@@ -46,7 +49,8 @@ public class LifestyleController {
 			model.addAttribute("error", e.getMessage());
 			e.printStackTrace();
 		}
-		return "lifestyle";
+		model.addAttribute("goBackUrl",UrlConstants.END_POINT_LIFESTYLE_URI);
+		return UrlConstants.END_POINT_MAIN_RESPONSE;
 	}
 	
 	@RequestMapping(value = { "/lifestyle-put.htm" }, method = RequestMethod.GET)
@@ -76,6 +80,7 @@ public class LifestyleController {
 			model.addAttribute("error", e.getMessage());
 			e.printStackTrace();
 		}
-		return "lifestyle";
+		model.addAttribute("goBackUrl",UrlConstants.END_POINT_LIFESTYLE_URI);
+		return UrlConstants.END_POINT_MAIN_RESPONSE;
 	}
 }
