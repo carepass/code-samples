@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.aetna.carepass.oauth.connector.api.appointment.Appointment;
 import com.aetna.carepass.oauth.connector.service.EndpointException;
 import com.aetna.carepass.oauth.connector.service.endpoints.AppointmentService;
+import com.aetna.carepass.oauth.controller.UrlConstants;
 import com.google.gson.Gson;
 
 @Controller
@@ -25,6 +27,7 @@ public class AppointmentController {
 	public ModelAndView redirectToAppointment() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("appointment");
+		mav.addObject("goBackUrl",UrlConstants.END_POINT_MAIN_URI);
 		return mav;
 	}
 
@@ -32,6 +35,7 @@ public class AppointmentController {
 	public ModelAndView redirectToFitnessPost() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("appointmentpost");
+		mav.addObject("appointment", new Appointment());
 		return mav;
 	}
 
@@ -39,6 +43,7 @@ public class AppointmentController {
 	public ModelAndView redirectToFitnessPut() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("appointmentput");
+		mav.addObject("appointment", new Appointment());
 		return mav;
 	}
 
@@ -56,18 +61,19 @@ public class AppointmentController {
 			model.addAttribute("error", e.getMessage());
 			e.printStackTrace();
 		}
-		return "appointment";
+		model.addAttribute("goBackUrl",UrlConstants.END_POINT_APPOINTMENT_URI);
+		return UrlConstants.END_POINT_MAIN_RESPONSE;		
 	}
 
 	@RequestMapping(value = { "/appointment-get.htm" }, method = RequestMethod.GET)
 	public String appointmentGetBy(@RequestParam("afterDate") String afterDate,
 			@RequestParam("carepassProviderId") String carepassProviderId,
-			@RequestParam("npiProviderId") String npiProviderId,
+			@RequestParam("ProviderIdValue") String providerIdValue,
 			WebRequest request, Model model) {
 		try {
 
 			List<Appointment> appointmentList = appointmentService
-					.findAppointment(afterDate,carepassProviderId,npiProviderId);
+					.findAppointment(afterDate,carepassProviderId,providerIdValue);
 			Gson gson = new Gson();
 			model.addAttribute("response", gson.toJson(appointmentList));
 
@@ -76,49 +82,19 @@ public class AppointmentController {
 			model.addAttribute("error", e.getMessage());
 			e.printStackTrace();
 		}
-		return "appointment";
+		model.addAttribute("goBackUrl",UrlConstants.END_POINT_APPOINTMENT_URI);
+		return UrlConstants.END_POINT_MAIN_RESPONSE;
 	}
 
 	@RequestMapping(value = { "/appointment-post.htm" }, method = RequestMethod.GET)
-	public String appointmentPost(@RequestParam("appStart") String appStart,
-			@RequestParam("appEnd") String appEnd,
-			@RequestParam("appScheduleDate") String appScheduleDate,
-			@RequestParam("appType") String appType,
-			@RequestParam("appReason") String appReason,
-			@RequestParam("appProviderId") int appProviderId,
-			@RequestParam("appFacilityName") String appFacilityName,
-			@RequestParam("appLine1") String appLine1,
-			@RequestParam("appLine2") String appLine2,
-			@RequestParam("appCity") String appCity,
-			@RequestParam("appState") String appState,
-			@RequestParam("appPC") String appPC,
-			@RequestParam("appCarrierId") int appCarrierId,
-			@RequestParam("appPlanId") int appPlanId,
-			@RequestParam("appStatus") String appStatus,
-			@RequestParam("appCarepassProviderId") int appCarepassProviderId,
+	public String appointmentPost(@ModelAttribute("appointment") Appointment appointment,
 			WebRequest request, Model model) {
 
-		Appointment app = new Appointment();
-		app.setAppointmentEnd(appEnd);
-		app.setAppointmentStart(appStart);
-		app.setCarrierId(appCarrierId);
-		app.setCity(appCity);
-		app.setFacilityName(appFacilityName);
-		app.setLine1(appLine1);
-		app.setLine2(appLine2);
-		app.setNpiProviderId(appProviderId);
-		app.setPlanId(appPlanId);
-		app.setPostalCode(appPC);
-		app.setReason(appReason);
-		app.setScheduledDate(appScheduleDate);
-		app.setState(appState);
-		app.setStatus(appStatus);
-		app.setType(appType);
-		app.setCarepassProviderId(appCarepassProviderId);
+		
 
 		try {
 			Appointment appointmentList = appointmentService.saveAppointment(
-					app, RequestMethod.POST);
+					appointment, RequestMethod.POST);
 			Gson gson = new Gson();
 			model.addAttribute("response", gson.toJson(appointmentList));
 		} catch (EndpointException e) {
@@ -126,50 +102,18 @@ public class AppointmentController {
 			model.addAttribute("error", e.getMessage());
 			e.printStackTrace();
 		}
-		return "appointment";
+		model.addAttribute("goBackUrl",UrlConstants.END_POINT_APPOINTMENT_URI);
+		return UrlConstants.END_POINT_MAIN_RESPONSE;
 	}
 
 	@RequestMapping(value = { "/appointment-put.htm" }, method = RequestMethod.GET)
-	public String appointmentPut(@RequestParam("appStart") String appStart,
-			@RequestParam("appEnd") String appEnd,
-			@RequestParam("appScheduleDate") String appScheduleDate,
-			@RequestParam("appType") String appType,
-			@RequestParam("appReason") String appReason,
-			@RequestParam("appProviderId") int appProviderId,
-			@RequestParam("appFacilityName") String appFacilityName,
-			@RequestParam("appLine1") String appLine1,
-			@RequestParam("appLine2") String appLine2,
-			@RequestParam("appCity") String appCity,
-			@RequestParam("appState") String appState,
-			@RequestParam("appPC") String appPC,
-			@RequestParam("appCarrierId") int appCarrierId,
-			@RequestParam("appPlanId") int appPlanId,
-			@RequestParam("appStatus") String appStatus,
-			@RequestParam("appCarepassProviderId") int appCarepassProviderId,
-			@RequestParam("appId") String appId, WebRequest request, Model model) {
-
-		Appointment app = new Appointment();
-		app.setId(appId);
-		app.setAppointmentEnd(appEnd);
-		app.setAppointmentStart(appStart);
-		app.setCarrierId(appCarrierId);
-		app.setCity(appCity);
-		app.setFacilityName(appFacilityName);
-		app.setLine1(appLine1);
-		app.setLine2(appLine2);
-		app.setNpiProviderId(appProviderId);
-		app.setPlanId(appPlanId);
-		app.setPostalCode(appPC);
-		app.setReason(appReason);
-		app.setScheduledDate(appScheduleDate);
-		app.setState(appState);
-		app.setStatus(appStatus);
-		app.setType(appType);
-		app.setCarepassProviderId(appCarepassProviderId);
+	public String appointmentPut(@ModelAttribute("appointment")Appointment appointment,
+			 WebRequest request, Model model) {
+		
 
 		try {
 			Appointment appointmentList = appointmentService.saveAppointment(
-					app, RequestMethod.PUT);
+					appointment, RequestMethod.PUT);
 			Gson gson = new Gson();
 			model.addAttribute("response", gson.toJson(appointmentList));
 		} catch (EndpointException e) {
@@ -177,7 +121,8 @@ public class AppointmentController {
 			model.addAttribute("error", e.getMessage());
 			e.printStackTrace();
 		}
-		return "appointment";
+		model.addAttribute("goBackUrl",UrlConstants.END_POINT_APPOINTMENT_URI);
+		return UrlConstants.END_POINT_MAIN_RESPONSE;
 	}
 
 }

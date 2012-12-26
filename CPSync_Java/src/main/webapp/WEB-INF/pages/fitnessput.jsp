@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,117 +17,122 @@
 
 				<li>Fitness Put
 
-					<form method="get" action="fitness-put.htm" id="cufp">
+					<form:form method="get" action="fitness-put.htm" id="cufp" commandName="fitness">
 						<table border="0">
 							<tr>
 								<td>Id</td>
-								<td><input name="fitnessId" id="fitnessId" /></td>
+								<td><form:input name="fitnessId" id="fitnessId" path="id"/></td>
 							</tr>
 							<tr>
 								<td>Description</td>
-								<td><input name="fitnessDescription"
-									id="fitnessDescription" /></td>
+								<td><form:input name="fitnessDescription" id="fitnessDescription" path="description" />
+								</td>								
 							</tr>
 							<tr>
 								<td>Notes</td>
-								<td><input name="fitnessNote" id="fitnessNote" /></td>
+								<td><form:input name="fitnessNote" id="fitnessNote" path="notes" />
+								</td>								
 							</tr>
 							<tr>
 								<td>Type of activity</td>
-								<td><input name="fitnessType" id="fitnessType" /></td>
+								<td><form:input name="fitnessType" id="fitnessType" path="type"/>
+								</td>								
 							</tr>
 							<tr>
 								<td>Extra Types of activity</td>
-								<td><input name="fitnessExtraType" id="fitnessExtraType" />
-								</td>
+								<td><form:input name="fitnessExtraType" id="fitnessExtraType" path="typeExtra" />
+								</td>								
 							</tr>
 							<tr>
 								<td>Date</td>
-								<td><input name="fitnessDate" id="fitnessDate" /></td>
+								<td><form:input name="fitnessDate" id="fitnessDate" path="date" />
+								</td>								
 							</tr>
 							<tr>
 								<td>Start Time</td>
-								<td><input name="fitnessStartTime" id="fitnessStartTime" />
-								</td>
+								<td><form:input name="fitnessStartTime" id="fitnessStartTime" path="startTime" />
+								</td>								
 							</tr>
 							<tr>
 								<td>End Time</td>
-								<td><input name="fitnessEndTime" id="fitnessEndTime" /></td>
+								<td><form:input name="fitnessEndTime" id="fitnessEndTime" path="endTime" />
+								</td>								
 							</tr>
 							<tr>
 								<td>Start City</td>
-								<td><input name="fitnessStartCity" id="fitnessStartCity" />
-								</td>
+								<td><form:input name="fitnessStartCity" id="fitnessStartCity" path="startCity" />
+								</td>								
 							</tr>
 							<tr>
 								<td>End City</td>
-								<td><input name="fitnessEndCity" id="fitnessEndCity" /></td>
+								<td><form:input name="fitnessEndCity" id="fitnessEndCity" path="endCity"/>
+								</td>								
 							</tr>
 							<tr>
 								<td>Start State</td>
-								<td><input name="fitnessStartState" id="fitnessStartState" />
-								</td>
+								<td><form:input name="fitnessStartState" id="fitnessStartState" path="startState"/>
+								</td>								
 							</tr>
 							<tr>
-								<td>End Sate</td>
-								<td><input name="fitnessEndState" id="fitnessEndState" />
-								</td>
+								<td>End State</td>
+								<td><form:input name="fitnessEndState" id="fitnessEndState" path="endState"/>
+								</td>								
 							</tr>
 							<tr>
 								<td>Start Country</td>
-								<td><input name="fitnessStartCountry"
-									id="fitnessStartCountry" /></td>
+								<td><form:input name="fitnessStartCountry" id="fitnessStartCountry" path="startCountry"/>
+								</td>								
 							</tr>
 							<tr>
 								<td>End Country</td>
-								<td><input name="fitnessEndCountry" id="fitnessEndCountry" />
-								</td>
+								<td><form:input name="fitnessEndCountry" id="fitnessEndCountry" path="endCountry" />
+								</td>								
 							</tr>
 							<tr>
-								<td>Start Latitude</td>
-								<td><input name="fitnessStartLatitude"
-									id="fitnessStartLatitude" /></td>
+								<td>Start Latitude </td>
+								<td><form:input name="fitnessStartLatitude" id="fitnessStartLatitude" path="startLatitude"/>
+								</td>								
 							</tr>
 							<tr>
 								<td>Start Longitude</td>
-								<td><input name="fitnessStartLongitude"
-									id="fitnessStartLongitude" /></td>
+								<td><form:input name="fitnessStartLongitude" id="fitnessStartLongitude" path="startLongitude" />
+								</td>								
 							</tr>
 							<tr>
-								<td>End Latitude</td>
-								<td><input name="fitnessEndLatitude"
-									id="fitnessEndLatitude" /></td>
+								<td>End Latitude </td>
+								<td><form:input name="fitnessEndLatitude" id="fitnessEndLatitude" path="endLatitude"/>
+								</td>								
 							</tr>
-
+							
 							<tr>
 								<td>End Longitude</td>
-								<td><input name="fitnessEndLongitude"
-									id="fitnessEndLongitude" /></td>
+								<td><form:input name="fitnessEndLongitude" id="fitnessEndLongitude" path="endLongitude"/>
+								</td>								
 							</tr>
 							<tr>
 								<td>Calories Burned</td>
-								<td><input name="fitnessCaloriesBurned"
-									id="fitnessCaloriesBurned" /></td>
+								<td><form:input name="fitnessCaloriesBurned" id="fitnessCaloriesBurned" path="caloriesBurned"/>
+								</td>								
 							</tr>
 							<tr>
 								<td>Distance</td>
-								<td><input name="fitnessDistance" id="fitnessDistance" />
-								</td>
+								<td><form:input name="fitnessDistance" id="fitnessDistance" path="distance"/>
+								</td>								
 							</tr>
 							<tr>
 								<td>Last Update</td>
-								<td><input name="fitnessLastUpdate" id="fitnessLastUpdate" />
-								</td>
+								<td><form:input name="fitnessLastUpdate" id="fitnessLastUpdate" path="lastUpdated"/>
+								</td>								
 							</tr>
 							<tr>
 								<td>Duration</td>
-								<td><input name="fitnessDuration" id="fitnessDuration" />
-								</td>
+								<td><form:input name="fitnessDuration" id="fitnessDuration" path="duration"/>
+								</td>								
 							</tr>
-							<tr>
+								<tr>
 								<td>Distance Unit</td>
-								<td><input name="fitnessDistanceUnit"
-									id="fitnessDistanceUnit" /></td>
+								<td><form:input name="fitnessDistanceUnit" id="fitnessDistanceUnit" path="distanceUnit" />
+								</td>								
 							</tr>
 
 							<tr>
@@ -135,7 +141,7 @@
 
 							</tr>
 						</table>
-					</form>
+					</form:form>
 				</li>
 			</ul>
 	</ul>

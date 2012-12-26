@@ -10,7 +10,7 @@
 			<ul>
 				<li>Appointment
 						Search
-					<form method="get" action="appointment-ge.htmt" id="cufa2">
+					<form method="get" action="appointment-get.htm" id="cufa2">
 						<table>
 							<tr>
 								<td>After Date</td>
@@ -22,8 +22,8 @@
 									id="carepassProviderId" /></td>
 							</tr>
 							<tr>
-								<td>NPI Provider Id</td>
-								<td><input name="npiProviderId" id="npiProviderId" /></td>
+								<td>Provider Id Value</td>
+								<td><input name="ProviderIdValue" id="ProviderIdValue" /></td>
 							</tr>
 							<tr>
 								<td colspan="2"><input type="submit" value="Go" /></td>
@@ -53,21 +53,9 @@
 		</li>
 	</ul>
 
-	<div id="response">
-		<h2>Server Response</h2>
-		<c:out value="${response}"></c:out>
-	</div>
-	<div id="error">
-		<h2>Error</h2>
-		<c:out value="${error}"></c:out>
-		<br />
-	</div>
 
-	<h2><a href="" onclick="javascript:history.back()">Return</a></h2>
+
+	<h2><a href="${goBackUrl }">Return</a></h2>
 </body>
 
-<script>
-	showReply("${error.length()}", error);
-	showReply("${response.length()}", response);
-</script>
 </html>

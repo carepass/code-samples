@@ -10,6 +10,7 @@ import org.springframework.web.context.request.WebRequest;
 import com.aetna.carepass.oauth.connector.api.biography.Biography;
 import com.aetna.carepass.oauth.connector.service.EndpointException;
 import com.aetna.carepass.oauth.connector.service.endpoints.BiographyService;
+import com.aetna.carepass.oauth.controller.UrlConstants;
 import com.google.gson.Gson;
 
 @Controller
@@ -30,6 +31,7 @@ public class BiographyController {
 			model.addAttribute("error", e.getMessage());
 			e.printStackTrace();
 		}
+		model.addAttribute("goBackUrl",UrlConstants.END_POINT_MAIN_URI);
 		return "response";
 	}
 }
