@@ -62,7 +62,7 @@
 		<br />
 	</div>
 
-	<h2><a href="" onclick="javascript:history.back()">Return</a></h2>
+	<h2><a href="${goBackUrl} ">Return</a></h2>
 </body>
 
 <script>

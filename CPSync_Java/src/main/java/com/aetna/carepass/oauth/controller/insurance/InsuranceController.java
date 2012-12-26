@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.aetna.carepass.oauth.connector.api.insurance.Insurance;
 import com.aetna.carepass.oauth.connector.service.EndpointException;
 import com.aetna.carepass.oauth.connector.service.endpoints.InsuranceService;
+import com.aetna.carepass.oauth.controller.UrlConstants;
 import com.google.gson.Gson;
 
 @Controller
@@ -26,6 +27,7 @@ public class InsuranceController {
 	public ModelAndView redirectToFitness() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("insurance");
+		mav.addObject("goBackUrl",UrlConstants.END_POINT_MAIN_URI);
 		return mav;
 	}
 
@@ -41,7 +43,8 @@ public class InsuranceController {
 			model.addAttribute("error", e.getMessage());
 			e.printStackTrace();
 		}
-		return "insurance";
+		model.addAttribute("goBackUrl",UrlConstants.END_POINT_INSURANCE_URI);
+		return UrlConstants.END_POINT_MAIN_RESPONSE;
 	}
 
 	@RequestMapping(value = { "/insurance-get-id.htm" }, method = RequestMethod.GET)
@@ -59,7 +62,8 @@ public class InsuranceController {
 			model.addAttribute("error", e.getMessage());
 			e.printStackTrace();
 		}
-		return "insurance";
+		model.addAttribute("goBackUrl",UrlConstants.END_POINT_INSURANCE_URI);
+		return UrlConstants.END_POINT_MAIN_RESPONSE;
 	}
 
 }

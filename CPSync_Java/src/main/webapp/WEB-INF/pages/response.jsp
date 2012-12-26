@@ -6,25 +6,28 @@
 <body>
 	<h1>Endpoint Response</h1>
 
-	<div id="response">
-		<h2>Server Response</h2>
-		<c:out value="${response}"></c:out>
-	</div>
-	<div id="error">
-		<h2>Error</h2>
-		<c:out value="${error}"></c:out>
-		<br />
-	</div>
+	<c:choose>
+		<c:when test="${response != null}">
 
-	<h2><a href="" onclick="javascript:history.back()">Return</a></h2>
+			<div id="response">
+				<h2>Server Response</h2>
+				<c:out value="${response}"></c:out>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<div id="error">
+				<h2>Error</h2>
+				<c:out value="${error}"></c:out>
+				<br />
+			</div>
+		</c:otherwise>
+	</c:choose>
+	<h2>
+		<a href="${goBackUrl}">Return</a>
+	</h2>
+
 </body>
 
 
-<script >
-	
-showReply("${error.length()}", error);
 
-showReply("${response.length()}", response);		
-	
-</script>
 </html>

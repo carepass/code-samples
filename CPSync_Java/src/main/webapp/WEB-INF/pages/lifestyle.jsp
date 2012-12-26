@@ -15,22 +15,9 @@
 						Put</a></li>
 			</ul>
 		</li>
-	</ul>
-	<div id="response">
-		<h2>Server Response</h2>
-		<c:out value="${response}"></c:out>
-	</div>
-	<div id="error">
-		<h2>Error</h2>
-		<c:out value="${error}"></c:out>
-		<br />
-	</div>
+	</ul>	
 
-	<h2><a href="" onclick="javascript:history.back()">Return</a></h2>
+	<h2><a href="${goBackUrl}">Return</a></h2>
 </body>
 
-<script>
-	showReply("${error.length()}", error);
-	showReply("${response.length()}", response);
-</script>
 </html>
