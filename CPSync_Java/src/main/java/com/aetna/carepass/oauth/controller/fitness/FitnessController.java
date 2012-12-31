@@ -120,9 +120,7 @@ public class FitnessController {
 	}
 
 	@RequestMapping(value = { "/fitness-put.htm" }, method = RequestMethod.GET)
-	public String fitnessPut( @ModelAttribute("fitness") Fitness fitness2, BindingResult result
-			
-			,
+	public String fitnessPut( @ModelAttribute("fitness") Fitness fitness2, BindingResult result,
 			WebRequest request, Model model) {
 		try {
 

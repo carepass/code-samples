@@ -9,7 +9,8 @@
 *.ipr
 *.iws
 .idea/
-
+target/
+war/
 
 *.pydevproject
 .project
