@@ -176,7 +176,7 @@ Using Maven(or ivy, sbt, etc), add the following to your pom.xml:
 	<repository>
 		<id>github</id>
 		<name>Carepass Client Libraries Repository</name>
-		<url>https://github.com/ferronrsmith/carepass-java-maven/raw/master</url>
+		<url>https://github.com/carepass/maven/raw/master</url>
 	</repository>
 </repositories>
 
