@@ -7,36 +7,27 @@ Configuration
 --------------------------
 
 ```ruby
-
-  protected
   CLIENT_ID = 'msxq7yak8m883hvkfpwb3c3f'
   CLIENT_SECRET = 'NHzzbcv3FwvkPHaSM8KvXumk'
-
-  def create_client
-    require 'oauth2'
-    @client = OAuth2::Client.new(CLIENT_ID, CLIENT_SECRET,
-                                :site => 'https://www.carepass.com',
-                                :authorize_url => '/carepass/oauth/authorize',
-                                :token_url => '/carepass/oauth/token')
-  end
+  REDIRECT_URL = 'http://127.0.0.1:3000/oauth/authorized'
+  OAUTH_ENDPOINT = 'https://www.carepass.com/carepass/oauth'
+  RESPONSE_TYPE = 'code'
+  SCOPE = 'IDENTITY,FAMILY,INSURANCE,LIFESTYLE,ACTIVITY,APPOINTMENT,FITNESS'
 ```
 > The application is already configured with sample **CLIENT_ID** and **CLIENT_SECRET**
 
 > Feel free to replace the values in the *oauth_controller.rb* file with your actual **client id** and *secret*.
 
+> Remember to configure the **REDIRECT_URL** and the **SCOPE**
+
+> **NB: REDIRECT_URL** must match the redirect_url added upon app creation via http://developer.carepass.com.
+
 > The carepass API currently supports only [authorization_code grant type](http://tools.ietf.org/html/draft-ietf-oauth-v2-31#page-23)
 
-```ruby
-
-  REDIRECT_URL = 'http://127.0.0.1:3000/oauth/authorized'
-  SCOPE = 'IDENTITY,FAMILY,INSURANCE,LIFESTYLE,ACTIVITY,APPOINTMENT,FITNESS'
-````
-> Remember to configure the **REDIRECT_URL** and the **SCOPE**.
-
-Application Requirements (Ruby on Rails 2.3.14)
+Application Requirements
 -----------------------------------------------
-
-+ gem install oauth2 https://rubygems.org/gems/oauth2
++ Ruby on Rails 2.3.14
++ gem install httparty (HTTParty)
 
 > **NB: Additional dependencies will be downloaded by the respective libraries**
 

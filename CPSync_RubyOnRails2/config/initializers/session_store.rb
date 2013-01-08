@@ -5,8 +5,8 @@
 # Make sure the secret is at least 30 characters and all random, 
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {
-  :key         => '_carepass_oauth2_session',
-  :secret      => '55a51e7e368eaa7fbd3c528673d61246adfe7137a6d00bcd7ef9256e15c887c3c4711966951dd121f33c6ccd52e47c05805a3840381438558b55cb828589fda9'
+  :key         => '_carepass_oauth_session',
+  :secret      => '6bedfc994bbf006086789c28ae8d38264b31401f594f2d2e7f3b8b26263b959de215bf27a7e5ef2dce9e65a3fdd3238c59dda75c8feed2af34a034fc9223d0fb'
 }
 
 # Use the database for sessions instead of the cookie-based default,

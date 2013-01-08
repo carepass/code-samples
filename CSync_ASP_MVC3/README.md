@@ -118,7 +118,7 @@ Other Libraries / Sample Applications
 + Active Networks created a ruby gem for accessing the CarePass APIs and has made it available publicly https://github.com/activenetwork/carepass
 + A Generic Python module for accessing several CarePass APIs is also availble https://github.com/msabramo/python-carepass
 + CarePass-Sync Oauth Sample Application (written in Python) - https://github.com/ferronrsmith/carepass-sync
-+ **Carepass Code Sample** - https://github.com/carepass/code-samples
++ Carepass Code Sample - https://github.com/carepass/code-samples
 
 
 ![alt text](https://www.carepass.com/carepass/resources/images/registered_cp_logo.png "CarePass Logo")
