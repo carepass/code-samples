@@ -1,0 +1,15 @@
+<!doctype html>
+<title>{% block title %}Welcome{% endblock %} | CarePass OAuth Example</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/main.css') }}">
+<h1>CarePass OAuth Example</h1>
+<ul class=navigation>
+        {% if user %}
+    <li><a href="{{ url_for('logout') }}">sign out [{{ user.firstName }}]</a>
+        {% else %}
+    <li><a href="{{ url_for('login') }}">sign in</a>
+        {% endif %}
+</ul>
+{% for message in get_flashed_messages() %}
+<p class=message>{{ message }}
+    {% endfor %}
+    {% block body %}{% endblock %}

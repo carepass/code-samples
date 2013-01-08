@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2>Overview</h2>
+{% if user %}
+<p>
+    Hello {{ user.firstName }}  {{ user.lastName }}
+</p>
+
+    <p>Your email is {{ user.email }}</p>
+    <p>Your ID is {{ user.id }}</p>
+
+    {% else %}
+    <p> Login to view your information </p>
+{% endif %}
+{% endblock %}

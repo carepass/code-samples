@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div>
+        <p>Simple Oauth HandShake Example. <br />Click the signin link or carepass image to proceed</p>
+        <a href="{{ url_for('login') }}">
+            <img src="/static/img/registered_cp_logo.png" alt="carepass">
+        </a>
+    </div>
+
+
+{% endblock %}
