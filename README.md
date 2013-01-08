@@ -1,6 +1,15 @@
-About These Samples
+Carepass Sample Applications 
 ===================
-Sample API usage from http://developer.carepass.com
+This repoository contains a collection of sample application written in different programming languages for interacting with carepass. 
+These samples provide boiler-plate samples for interacting with many different CarePass API, such as :
++ GoodRx Sync API
++ CarePass Sync API 
++ HHS Health Data Initiative
++ GoodRx Retail Rx
++ Est Cost of Care of Care
+
+> *For more information on the APIS please visit* [CarePass API gallery](https://developer.carepass.com/api_gallery)
+
 
 [HHSandGoodRx_JavaScript](https://github.com/carepass/code-samples/tree/master/HHSandGoodRx_JavaScript)
 ------------------------
