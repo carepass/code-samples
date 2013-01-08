@@ -57,3 +57,27 @@ Sample Ruby on Rails application for performing the CarePass Oauth-Handshake. Th
 Sample Ruby on Rails application for performing the CarePass Oauth-Handshake. This example uses the http-party to perform oauth dance (no third party oauth library used)
 
 
+CarePass API Client Libraries: Java, JavaScript and Objective C
+---------------------------------------------------------------
+The CarePass API library offers unique and powerful APIs from Aetna, HHS, and other innovators in the health and wellness community. For more details, please visit <https://developer.carepass.com/>
+
+Client libraries in Java, JavaScript and Objective C are available. Please view the respective branches for more information.
+
+Details of each  library can be found in the README.md on each branch, or you can jump directly to:-
+
+1. Javadoc <http://carepass.github.com/client-libraries/javadoc/>
+2. JSdoc <https://github.com/carepass/client-libraries/blob/JavaScript/README.md>
+3. iOS documentation <https://github.com/carepass/client-libraries/blob/iOS/README.md>
+
+> **CarePass Sync APIs currently exposes three profiles - identity, fitness and lifestyle ,however, parts of these sample apps attempt to interact with upcoming APIs that may not yet be fully functional.**
+
+
+Other Libraries / Sample Applications
+---------------------------------------------------------------
++ Active Networks created a ruby gem for accessing the CarePass APIs and has made it available publicly https://github.com/activenetwork/carepass
+	+ The following ruby gem implements a simple RESTFUL wrapper for carepass fitness api. It can be used to upload a user workout data
++ A Generic Python module for accessing several CarePass APIs is also availble https://github.com/msabramo/python-carepass
+	+ The following library implements a simple RESTFUL wrapper for carepass GoodRx and CostOfCare API
+
+
+![alt text](https://www.carepass.com/carepass/resources/images/registered_cp_logo.png "CarePass Logo")
