@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+<h1>CarePass OAuth Example</h1>
+<ul class=navigation>
+  <% if session[:access_token] %>
+      <li><a href="/oauth/logout">sign out</a>
+  <% else %>
+      <li><a href="/oauth/login">sign in</a>
+  <% end %>
+</ul>
+<%= yield %>
+</body>
+</html>
