@@ -57,6 +57,7 @@ Other Libraries
 Sample Applications
 ---------------------------------------------------------------- 
 Sample applications are available and implement were implemented in the following languages.
+<<<<<<< HEAD
 	+ Ruby / Ruby on Rails
 	+ C# / ASP.NET MV3
 	+ Python
@@ -64,6 +65,15 @@ Sample applications are available and implement were implemented in the followin
 	+ JavaScript
 	+ Objective C / IOS
 	+ Grails
+=======
++ Ruby / Ruby on Rails
++ C# / ASP.NET MV3
++ Python
++ Java
++ JavaScript
++ Objective C / IOS
++ Grails
+>>>>>>> upstream/master
 	
 > Sample can be found here : https://github.com/carepass/code-samples
 
