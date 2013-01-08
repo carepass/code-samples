@@ -74,7 +74,7 @@ Sample applications are available in the following languages.
 + Objective C / IOS
 + Grails
 	
-> Sample can be found here : https://github.com/carepass/code-samples
+> Sample applications can be found here : https://github.com/carepass/code-samples
 
 
 ![alt text](https://www.carepass.com/carepass/resources/images/registered_cp_logo.png "CarePass Logo")

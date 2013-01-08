@@ -88,7 +88,4 @@ Other Libraries
 + A Generic Python module for accessing several CarePass APIs is also availble https://github.com/msabramo/python-carepass
 	+ The following library implements a simple RESTFUL wrapper for carepass GoodRx and CostOfCare API
 
-> Sample can be found here : https://github.com/carepass/code-samples
-
-
 ![alt text](https://www.carepass.com/carepass/resources/images/registered_cp_logo.png "CarePass Logo")
