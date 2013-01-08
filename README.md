@@ -87,19 +87,7 @@ Other Libraries
 	+ The following ruby gem implements a simple RESTFUL wrapper for carepass fitness api. It can be used to upload a user workout data
 + A Generic Python module for accessing several CarePass APIs is also availble https://github.com/msabramo/python-carepass
 	+ The following library implements a simple RESTFUL wrapper for carepass GoodRx and CostOfCare API
-	
-Sample Applications
----------------------------------------------------------------- 
-Sample applications are available and implement were implemented in the following languages.
 
-+ Ruby / Ruby on Rails
-+ C# / ASP.NET MV3
-+ Python
-+ Java
-+ JavaScript
-+ Objective C / IOS
-+ Grails
-	
 > Sample can be found here : https://github.com/carepass/code-samples
 
 

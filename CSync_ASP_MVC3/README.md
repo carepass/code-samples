@@ -122,7 +122,7 @@ Other Libraries
 	
 Sample Applications
 ---------------------------------------------------------------- 
-Sample applications are available and implement were implemented in the following languages.
+Sample applications are available in the following languages.
 + Ruby / Ruby on Rails
 + C# / ASP.NET MV3
 + Python
