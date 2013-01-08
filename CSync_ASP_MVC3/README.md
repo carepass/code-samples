@@ -123,13 +123,13 @@ Other Libraries
 Sample Applications
 ---------------------------------------------------------------- 
 Sample applications are available and implement were implemented in the following languages.
-	+ Ruby / Ruby on Rails
-	+ C# / ASP.NET MV3
-	+ Python
-	+ Java
-	+ JavaScript
-	+ Objective C / IOS
-	+ Grails
++ Ruby / Ruby on Rails
++ C# / ASP.NET MV3
++ Python
++ Java
++ JavaScript
++ Objective C / IOS
++ Grails
 	
 > Sample can be found here : https://github.com/carepass/code-samples
 

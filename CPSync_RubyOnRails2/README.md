@@ -47,12 +47,25 @@ Details of each  library can be found in the README.md on each branch, or you ca
 > **CarePass Sync APIs currently exposes three profiles - identity, fitness and lifestyle ,however, parts of these sample apps attempt to interact with upcoming APIs that may not yet be fully functional.**
 
 
-Other Libraries / Sample Applications
+Other Libraries 
 ---------------------------------------------------------------
 + Active Networks created a ruby gem for accessing the CarePass APIs and has made it available publicly https://github.com/activenetwork/carepass
+	+ The following ruby gem implements a simple RESTFUL wrapper for carepass fitness api. It can be used to upload a user workout data
 + A Generic Python module for accessing several CarePass APIs is also availble https://github.com/msabramo/python-carepass
-+ CarePass-Sync Oauth Sample Application for ASP.NET MVC 3 is also availble https://github.com/ferronrsmith/carepass-sync-aspmvc3
-+ **Carepass Code Sample** - https://github.com/carepass/code-samples
+	+ The following library implements a simple RESTFUL wrapper for carepass GoodRx and CostOfCare API
+	
+Sample Applications
+---------------------------------------------------------------- 
+Sample applications are available and implement were implemented in the following languages.
++ Ruby / Ruby on Rails
++ C# / ASP.NET MV3
++ Python
++ Java
++ JavaScript
++ Objective C / IOS
++ Grails
+	
+> Sample can be found here : https://github.com/carepass/code-samples
 
 
 ![alt text](https://www.carepass.com/carepass/resources/images/registered_cp_logo.png "CarePass Logo")
