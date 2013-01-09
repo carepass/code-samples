@@ -96,7 +96,7 @@ This library is dependent on:
 - RestSharp (http://restsharp.org/)
 - Newtonsoft.Json (http://json.codeplex.com/)
 
->> **For more information of on the CarePass integration with Oauth2 Library https://github.com/carepass/code-samples/blob/master/CSync_ASP_MVC3/OAuth2/Client/Impl/CarePassClient.cs **
+>> **For more information of on the CarePass integration with Oauth2 Library view the [CarePassClient Implementation](https://github.com/carepass/code-samples/blob/master/CSync_ASP_MVC3/OAuth2/Client/Impl/CarePassClient.cs) **
 
 CarePass API Client Libraries: Java, JavaScript and Objective C
 ---------------------------------------------------------------
