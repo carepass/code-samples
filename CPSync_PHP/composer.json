@@ -1,0 +1,9 @@
+{
+    "require": {
+        "slim/slim": "2.*",
+        "lncd/Oauth2": "dev-feature/reorg",
+        "slim/extras": "2.*",
+        "twig/twig": "1.12.*@dev"
+    }
+
+}

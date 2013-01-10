@@ -221,6 +221,7 @@ Sample applications are available in the following languages.
 + JavaScript
 + Objective C / IOS
 + Grails
++ PHP
 	
 > Sample applications can be found here : https://github.com/carepass/code-samples
 
