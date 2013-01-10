@@ -24,7 +24,48 @@ $client = new CarePass(array(
 
 ```
 
->> **For more information of on the CarePass integration with Oauth2 Library view**
+##### Carepass Provider Implementation is as follows
+```php
+
+<?php
+/**
+ * CarePass OAuth2 Provider
+ *
+ * @category   Provider
+ * @author     Ferron Hanse
+ * @license    http://philsturgeon.co.uk/code/dbad-license
+ */
+
+class CarePass extends OAuth2\Client\IDP
+{
+    public function urlAuthorize()
+    {
+        return 'https://www.carepass.com/carepass/oauth/authorize';
+    }
+
+    public function urlAccessToken()
+    {
+        return 'https://www.carepass.com/carepass/oauth/token';
+    }
+
+    public function urlUserDetails(\OAuth2\Client\Token\Access $token)
+    {
+        return 'https://api.carepass.com/user-directory-api/users/currentUser';
+    }
+
+    public function userDetails($response, \OAuth2\Client\Token\Access $token)
+    {
+        return array(
+            'id' => $response->id,
+            'firstName' => $response->firstName,
+            'lastName' => $response->lastName,
+            'email' => $response->email
+        );
+    }
+}
+
+```
+
 
 				
 The retrieved access_token is stored in the CarePassOAuth service and could be requested to be used. 

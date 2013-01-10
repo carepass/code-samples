@@ -66,6 +66,11 @@ Sample Ruby on Rails application for performing the CarePass Oauth-Handshake. Th
 Sample Ruby on Rails application for performing the CarePass Oauth-Handshake. This example uses the http-party to perform oauth dance (no third party oauth library used)
 
 
+[CSync_PHP](https://github.com/carepass/code-samples/tree/master/CSync_PHP)
+--------------------
+Sample PHP  application for performing the CarePass Oauth-Handshake.
+
+
 CarePass API Client Libraries: Java, JavaScript and Objective C
 ---------------------------------------------------------------
 The CarePass API library offers unique and powerful APIs from Aetna, HHS, and other innovators in the health and wellness community. For more details, please visit <https://developer.carepass.com/>
