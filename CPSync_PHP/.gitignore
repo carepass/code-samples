@@ -3,8 +3,7 @@
 coverage
 
 # Ignore binary files
-guzzle.phar
-guzzle-min.phar
+*.phar
 
 # Ignore potentially sensitive phpunit file
 phpunit.xml
