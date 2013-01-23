@@ -60,7 +60,6 @@
     <Reference Include="System.Web.Routing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clients\CarePassClient.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Global.asax.cs">
