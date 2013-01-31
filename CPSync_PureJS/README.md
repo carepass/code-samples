@@ -1,9 +1,5 @@
 # JSO - a Javascript OAuth Library
 
-This library was rewritten by Ferron Hanse in January 2013.
-
-This library is a rewrite of [Andreas Åkre Solberg (UNINETT AS) JavaScript Oauth Library](https://github.com/andreassolberg/jso).
-
 It's intended use is for web applications (javascript) that connects to one or more APIs using OAuth 2.0.
 
 Current status is that the library is not well tested, due to lack of known providers with support for OAuth 2.0
