@@ -12,6 +12,8 @@ Steps to run the demo:
 
 * MacOS: open -a Google\ Chrome --args --disable-web-security
 
+>> NB: If your are accessing from a file:// file path use the following chrome --disable-web-security --allow-file-access-from-files
+
 
 2) Open file js/config.js and edit urlAPI to point to your hhs-api deploy path.
 
