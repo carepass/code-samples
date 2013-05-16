@@ -10,10 +10,10 @@ session_start();
 
 
 require 'vendor/autoload.php';
-require 'vendor/lncd/Oauth2/src/OAuth2/Client/Provider/CarePass.php';
 
 use \Slim\Slim as Slim;
 use \Slim\Extras\Views\Twig as TwigView;
+use \OAuth2\Client\Provider\CarePass as CarePass;
 
 $app = new Slim(array(
     'view' => new TwigView(),
