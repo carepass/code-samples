@@ -14,6 +14,7 @@ require 'vendor/autoload.php';
 use \Slim\Slim as Slim;
 use \Slim\Extras\Views\Twig as TwigView;
 use \OAuth2\Client\Provider\CarePass as CarePass;
+use OAuth2\Client\Exception\IDPException as IDPException;
 
 $app = new Slim(array(
     'view' => new TwigView(),
@@ -39,8 +40,9 @@ $app->get('/login', function ()  use($client) {
 $app->get('/callback', function () use($client, $app) {
     $auth_code = $app->request()->get('code');
     if (isset($auth_code)) {
-        $access_token = $client->getAccessToken($auth_code, array(
-        'response_type' => 'code'
+        $access_token = $client->getAccessToken($grant = 'authorization_code', array(
+            'code' => $auth_code,
+            'response_type' => 'code'
         ));
 
         if(isset($access_token)) {
@@ -68,7 +70,7 @@ $app->get('/sample', function ()  use($app) {
     ));
 });
 
-$app->error(function (\OAuth2\Client\IDPException $e) use ($app) {
+$app->error(function (IDPException $e) use ($app) {
     $app->render('error.twig');
 });
 
