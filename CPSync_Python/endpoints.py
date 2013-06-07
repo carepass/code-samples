@@ -75,8 +75,6 @@ def authorized():
 
     authCode = request.args.get('code')
     result = cacheToken(CLIENT_ID, authCode, exchange)
-    print result
-    print "data"
 
     if result.get('access_token') is not None:
         session['access_token'] = result.get('access_token')
