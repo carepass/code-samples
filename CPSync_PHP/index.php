@@ -21,10 +21,13 @@ $app = new Slim(array(
     'debug' => true
 ));
 
+// Get request object
+$req = $app->request();
+
 $client = new CarePass(array(
     'clientId' => '2me8aqm3q5nqjtkus6yk4mxp',
     'clientSecret' => 'AkyAXqFptvSgFEVr9c9JUvH3',
-    'redirectUri' => 'http://localhost/CPSync_PHP/callback',
+    'redirectUri' => $req->getUrl() . $req->getResourceUri() . '/callback',
     'scopes' => array('IDENTITY','FAMILY','INSURANCE','LIFESTYLE','ACTIVITY','APPOINTMENT','FITNESS')
 ));
 
