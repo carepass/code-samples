@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">carepass-android-sample</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="carepass_api_key">Your App API Key</string>
+    <string name="carepass_shared_secret">Your App Shared Secret</string>
+    <string name="carepass_redirect_uri">app://com.aetna.carepass.android.sample/oauth</string>
+
+    <string name="enable_internet">Enable Internet</string>
+
+</resources>
