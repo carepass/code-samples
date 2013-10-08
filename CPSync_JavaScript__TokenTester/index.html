@@ -1,0 +1,47 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tokentester</title>
+        <script src='js/libs/jquery-1.9.0/jquery.min.js'></script>
+        <script src='js/libs/jquery-1.9.0/jquery.md5.js'></script>
+        <script src="js/libs/log4js/log4javascript_uncompressed.js"></script>
+        <script src='js/main.js'></script>
+        <link rel="stylesheet" type="text/css" media="screen,print" href="css/main.css" title="Default" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <p>Client ID or Key <input id='clientid' class='config' type='text' /></p>
+        <p>Client Secret <input  id='clientsecret' class='config'  type='text' /></p>
+        <p>Scope <input id='scope'  class='config'  type='text' /></p>
+        <p>Token <input  id='token'  class='config'  type='text' disabled/></p>
+        <p>
+            <select id="optEnviron" onchange="changeEnvironment();">
+                <option>local</option>
+                <option>qa</option>
+                <option>qa2</option>
+                <option>qa3</option>
+                <option>qa4</option>
+                <option>qa5</option>
+                <option>qa6</option>
+                <option>qa7</option>                                
+                <option>prod</option>
+            </select>
+        <button onclick="startOAuthHandshake()">Start OAuth </button>
+        <button onclick="updateEnvValues()">Update Environment Values</button></p>
+        <button onclick="clearEnv()">Clear Config</button></p>
+        
+        <br /><br />
+        <h2>Auth code exchange</h2>
+        <p>A simple utility that allows you use the authorization code returned from Mashery to generate an acess token</p>
+        <p><strong>NB: Please note this feature assumes that your settings has been persisted in localStorage</strong></p>
+        
+        <p>Authorization Code <input id='auth_code' class='config' type='text' /></p>
+        <textarea rows="4" cols="50" id="token_display"></textarea>
+        <button onclick="getAccessToken()">Get Access token</button>
+    </body>
+</html>
