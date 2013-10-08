@@ -20,10 +20,10 @@
 
         <dependency>
             <groupId>JavaConnector</groupId>
-            <artifactId>consumer-platform-carepass-java-connector</artifactId>
+            <artifactId>consumer-connector</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/resources/jars/consumer-platform-carepass-java-connector.jar</systemPath>
+            <systemPath>src/main/resources/jars/carepass-connector.jar</systemPath>
         </dependency>
 
 		<!-- Spring 3 dependencies -->
