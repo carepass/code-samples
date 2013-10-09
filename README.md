@@ -1,6 +1,15 @@
-About These Samples
+Carepass Sample Applications 
 ===================
-Sample API usage from http://developer.carepass.com
+This repoository contains a collection of sample application written in different programming languages for interacting with carepass. 
+These samples provide boiler-plate samples for interacting with many different CarePass API, such as :
++ GoodRx Sync API
++ CarePass Sync API 
++ HHS Health Data Initiative
++ GoodRx Retail Rx
++ Est Cost of Care of Care
+
+> *For more information on the APIS please visit* [CarePass API gallery](https://developer.carepass.com/api_gallery)
+
 
 [HHSandGoodRx_JavaScript](https://github.com/carepass/code-samples/tree/master/HHSandGoodRx_JavaScript)
 ------------------------
@@ -57,6 +66,11 @@ Sample Ruby on Rails application for performing the CarePass Oauth-Handshake. Th
 Sample Ruby on Rails application for performing the CarePass Oauth-Handshake. This example uses the http-party to perform oauth dance (no third party oauth library used)
 
 
+[CSync_PHP](https://github.com/carepass/code-samples/tree/master/CSync_PHP)
+--------------------
+Sample PHP  application for performing the CarePass Oauth-Handshake.
+
+
 CarePass API Client Libraries: Java, JavaScript and Objective C
 ---------------------------------------------------------------
 The CarePass API library offers unique and powerful APIs from Aetna, HHS, and other innovators in the health and wellness community. For more details, please visit <https://developer.carepass.com/>
@@ -78,20 +92,5 @@ Other Libraries
 	+ The following ruby gem implements a simple RESTFUL wrapper for carepass fitness api. It can be used to upload a user workout data
 + A Generic Python module for accessing several CarePass APIs is also availble https://github.com/msabramo/python-carepass
 	+ The following library implements a simple RESTFUL wrapper for carepass GoodRx and CostOfCare API
-	
-Sample Applications
----------------------------------------------------------------- 
-Sample applications are available and implement were implemented in the following languages.
-
-+ Ruby / Ruby on Rails
-+ C# / ASP.NET MV3
-+ Python
-+ Java
-+ JavaScript
-+ Objective C / IOS
-+ Grails
-	
-> Sample can be found here : https://github.com/carepass/code-samples
-
 
 ![alt text](https://www.carepass.com/carepass/resources/images/registered_cp_logo.png "CarePass Logo")

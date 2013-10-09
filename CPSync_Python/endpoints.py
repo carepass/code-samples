@@ -27,7 +27,7 @@ def result():
 
     try:
         r = requests.get(USER_ENDPOINT.format(BIO_API), headers=headers)
-        user = r.json
+        user = r.json()
         print user
         if user.get('id') is not None:
             return render_template('result.html', user=user)
@@ -78,6 +78,7 @@ def authorized():
 
     if result.get('access_token') is not None:
         session['access_token'] = result.get('access_token')
+        print session['access_token']
         return redirect(url_for('result'))
     else:
         print result['error']
@@ -95,8 +96,9 @@ def exchange(authCode=None):
                'code': authCode,
                'client_secret': CLIENT_SECRET,
                'redirect_uri': url_for('authorized', _external=True)}
+    print payload
     r = requests.post(carepass.access_token_url, params=payload)
-    return r.json
+    return r.json()
 
 
 @carepass.tokengetter

@@ -87,6 +87,8 @@ Using the received grant code, call is made to /token endpoint with additional p
 		return "endpoint";
 	}
 ```
+				
+The retrieved access_token is stored in the CarePassOAuth service and could be requested to be used. 
 
 The retrieved access_token is stored in the CarePassOAuth service and could be requested to be used.
 
@@ -221,8 +223,9 @@ Sample applications are available and implement were implemented in the followin
 + JavaScript
 + Objective C / IOS
 + Grails
-
-> Sample can be found here : https://github.com/carepass/code-samples
++ PHP
+	
+> Sample applications can be found here : https://github.com/carepass/code-samples
 
 
 ![alt text](https://www.carepass.com/carepass/resources/images/registered_cp_logo.png "CarePass Logo")

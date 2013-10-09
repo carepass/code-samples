@@ -1,0 +1,9 @@
+{
+    "require": {
+        "slim/slim": "2.*",
+        "carepass/oauth2-client": "dev-master",
+        "slim/extras": "2.*",
+        "twig/twig": "1.12.*@dev"
+    }
+
+}
