@@ -92,12 +92,6 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-
-        <dependency>
-            <groupId>com.aetna.carepass</groupId>
-            <artifactId>consumer-platform-carepass-java-connector</artifactId>
-            <version>2.2-SNAPSHOT</version>
-        </dependency>
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
