@@ -8,26 +8,73 @@
 			 Modernizr enables HTML5 elements & feature detects for optimal performance.
 			 Create your own custom Modernizr build: www.modernizr.com/download/ -->
 
-	<script src="static/js/libs/json2.js"></script>
+	<script src="/static/js/libs/json2.js"></script>
 	<!-- https://github.com/wojodesign/local-storage-js -->
-	<script src="static/js/libs/localstorage.js"></script>
-	<script src="static/js/libs/modernizr-2.6.2.min.js"></script>
-	<script src="static/js/libs/jquery-1.8.3.js"></script>
+	<script src="/static/js/libs/localstorage.js"></script>
+	<script src="/static/js/libs/modernizr-2.6.2.min.js"></script>
+	<script src="/static/js/libs/jquery-1.8.3.js"></script>
 
-	<script src="static/js/jso.js"></script>
+	<script src="/static/js/jso.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 
 
 			// Add configuration for one or more providers.
 			jso_configure({
+				"uwap": {
+					client_id: "-----",
+					redirect_uri: "http://localhost/~andreas/jso/demo/",
+					authorization: "http://proxydemo.app.bridge.uninett.no/_/oauth/auth.php/authorization"
+				}
+				,"facebook": {
+					client_id: "-----",
+					redirect_uri: "http://localhost/~andreas/jso/demo/",
+					authorization: "https://www.facebook.com/dialog/oauth",
+					presenttoken: "qs"
+				},
+				"linkedin": {
+					client_id: "-----",
+					redirect_uri: "http://localhost/~andreas/jso/demo/",
+					authorization: "https://www.linkedin.com/oauth"
+				},
+				"google": {
+					client_id: "-----.googleusercontent.com",
+					redirect_uri: "http://localhost/~andreas/jso/demo/",
+					authorization: "https://accounts.google.com/o/oauth2/auth"
+				},
+				"ibm": {
+					client_id: "-----.googleusercontent.com",
+					redirect_uri: "http://localhost/~andreas/jso/demo/",
+					authorization: "https://accounts.google.com/o/oauth2/auth"
+				},
+				"solberg": {
+					client_id: "andreas2",
+					redirect_uri: "file://localhost/Users/andreas/Sites/jso/demo/index.html",
+					authorization: "http://bridge.uninett.no/solberg-oauth/www/server/server.php/authorization"
+				},
+				"solberg2": {
+					client_id: "andreas",
+					redirect_uri: "http://localhost/~andreas/jso/demo/",
+					authorization: "http://bridge.uninett.no/solberg-oauth/www/server/server.php/authorization"
+				},
+				"solberg3": {
+					client_id: "jsodemo",
+					redirect_uri: "http://localhost/~andreas/jso/demo/",
+					authorization: "http://proxydemo.app.bridge.uninett.no/_/oauth/auth.php/authorization"
+				},
+				"instagram": {
+					client_id: "xxx",
+					redirect_uri: "http://localhost/~andreas/jso/demo/",
+					authorization: "https://instagram.com/oauth/authorize/",
+					scope: ["basic", "likes"]
+				},
                 "carepass" : {
-                    client_id: "d5axb6rfdsawv3hbxt3gh7x2",
-                    client_secret : "AfecRkCjka2ETdNWMhJZGgZs",
-                    redirect_uri:'http://localhost/CPSync_PureJS/index.html',
+                    client_id: "8tcxcc5987cgbqfqqk7qqeu6",
+                    client_secret : "4Kvrr3CeCbT7fV5XSTX3j284",
+                    redirect_uri:'http://127.0.0.1:5000',
                     authorization:'https://www.carepass.com/carepass/oauth/authorize',
                     token:'https://www.carepass.com/carepass/oauth/token',
-                    scope:['IDENTITY','FAMILY','INSURANCE','LIFESTYLE','ACTIVITY','APPOINTMENT','FITNESS'],
+                    scope:['IDENTITY','FITNESS'],
                     response_type:'code',
                     isDefault:true
                 }
@@ -40,8 +87,8 @@
 				// "facebook": ["read_stream"],
 				// "google": ["https://www.googleapis.com/auth/userinfo.profile"],
 				//"instagram": ["basic", "likes"]
-				"carepass": ['IDENTITY','FAMILY','INSURANCE','LIFESTYLE','ACTIVITY','APPOINTMENT','FITNESS']
-			});
+				"carepass": ['IDENTITY','FITNESS']
+			}, getUserData);
 
 			// This dumps all cached tokens to console, for easyer debugging.
 			jso_dump();
@@ -52,7 +99,7 @@
                 $.oajax({
                     url: "https://api.carepass.com/user-directory-api/users/currentUser",
                     jso_provider: "carepass", // Will match the config identifier
-                    jso_scopes: ['IDENTITY','FAMILY','INSURANCE','LIFESTYLE','ACTIVITY','APPOINTMENT','FITNESS'], // List of scopes (OPTIONAL)
+                    jso_scopes: ['IDENTITY','FITNESS'], // List of scopes (OPTIONAL)
                     dataType: 'json',
                     success: function(data) {
                         console.log("Response (bridge):");

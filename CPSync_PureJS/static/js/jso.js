@@ -86,6 +86,9 @@
             return Math.round(new Date().getTime() / 1000.0);
         },
         parseQueryString : function (qs) {
+			if(arguments.length==0) {
+				qs = exp.location.href;
+			}
             var e,
                 a = /\+/g,  // Regex for replacing addition symbol with a space
                 r = /([\w]+)=?([\w]*)/g,
@@ -97,17 +100,6 @@
             }
 
             return urlParams;
-        },
-        getUrlVars : function (url) {
-            var vars = [], hash, $href, hashes, i;
-            $href = (url !== undefined) ? url : exp.location.href;
-            hashes = $href.slice($href.indexOf('?') + 1).split('&');
-            for (i = 0; i < hashes.length; i += 1) {
-                hash = hashes[i].split('=');
-                vars.push(hash[0]);
-                vars[hash[0]] = hash[1];
-            }
-            return vars;
         }
     });
 
@@ -306,10 +298,8 @@
 	Api_default_storage.prototype.getToken = function (provider, scopes) {
 		var tokens = this.getTokens(provider);
 		tokens = api_storage.filterTokens(tokens, scopes);
-		if (tokens.length < 1) {
-            return null;
-        }
-		return tokens[0];
+		// ensure that the latest token is taken
+		return tokens.length > 0 ? tokens[tokens.length-1] : null;
 	};
 
 	api_storage = new Api_default_storage();
@@ -475,11 +465,7 @@
         if (co.redirect_uri) {
             request.redirect_uri = co.redirect_uri;
         }
-
-        if (request.response_type !== 'code') {
-            request.state = state;
-        }
-
+        
         authurl = utility.encodeURL(co.authorization, request);
 
 		// We'd like to cache the hash for not loosing Application state. 
@@ -510,7 +496,6 @@
         }
 
 		api_redirect(authurl);
-
 	};
 
     /**
@@ -522,7 +507,7 @@
      */
     jso_fetchtoken = function (providerid, state, callback) {
 
-        var request = {}, authurl, co, code; console.log('i am here')
+        var request = {}, authurl, co, code;
 
         request = api_storage.getState(state);
 
@@ -530,7 +515,7 @@
             internalStates[state] = callback;
         }
 
-        code = utility.getUrlVars().code;
+        code = utility.parseQueryString().code;
         if (code === undefined) {
             return;
         }
@@ -599,9 +584,11 @@
                 utility.log(token);
 
                 state = api_storage.getPreference(providerid);
-				 console.log(state);
-				 console.log(token);
-                if (state !== null && token === null) {
+
+				// added functionality to check that a authorization code is present in the url
+				// e.g http://127.0.0.1:5000/?code=79ny2dqvem9wq26k62x84y2p
+				// For more info on the auth response code param :- http://tools.ietf.org/html/rfc6749#page-26
+                if (state !== null && token === null && utility.parseQueryString().code !== undefined) {
                     jso_fetchtoken(providerid, state, jso_savetoken);
                     return;
                 }
